@@ -1,0 +1,6 @@
+repository: alpha3166/blog
+theme: jekyll-theme-dinky
+title: アルファのブログ
+github:
+  owner_name: "@alpha3166"
+  owner_url: https://twitter.com/alpha3166
