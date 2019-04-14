@@ -1,5 +1,6 @@
 repository: alpha3166/blog
 theme: jekyll-theme-dinky
+lang: ja-JP
 title: アルファのブログ
 description: ことば、計算機、SF、ヒコーキ
 github:
