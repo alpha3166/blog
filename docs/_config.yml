@@ -1,6 +1,7 @@
 repository: alpha3166/blog
 theme: jekyll-theme-dinky
 title: アルファのブログ
+description: ことば、計算機、SF、ヒコーキ
 github:
-  owner_name: "@alpha3166"
+  owner_name: alpha3166
   owner_url: https://twitter.com/alpha3166
