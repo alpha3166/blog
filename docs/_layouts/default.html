@@ -15,7 +15,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header"><a href="index.html">{{ site.title | default: site.github.repository_name }}</a></h1>
+        <h1 class="header"><a href="{{ site.baseurl }}/index.html">{{ site.title | default: site.github.repository_name }}</a></h1>
         <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
 
         <ul>
@@ -27,13 +27,13 @@
         </ul>
 
         <ul>
-          <li><a href="index.html">作成日順リスト</a></li>
-          <li><a href="index_by_category.html">カテゴリ別リスト</a></li>
+          <li><a href="{{ site.baseurl }}/index.html">作成日順リスト</a></li>
+          <li><a href="{{ site.baseurl }}/index_by_category.html">カテゴリ別リスト</a></li>
         </ul>
 
         {% if site.github.is_project_page %}
           <p class="header">
-            <img src="img/alpha3166.jpg" alt="alpha3166" width="16px" height="16px">
+            <img src="{{ site.baseurl }}/img/alpha3166.jpg" alt="alpha3166" width="16px" height="16px">
             <a class="header name" href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>
           </p>
         {% endif %}
