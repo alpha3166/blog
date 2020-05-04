@@ -158,6 +158,7 @@
 - [2019-04-30 WinDVD Pro 12が酷かった話](20190430.md)
 - [2019-05-04 MavenのDockerでUID/GIDを変える](20190504.md)
 - [2020-05-03 UbuntuにJekyllを入れる](20200503.md)
+- [2020-05-04 Ubuntu 18.04のVagrant box比較](20200504.md)
 
 ## SF
 
