@@ -159,6 +159,7 @@
 - [2019-05-04 MavenのDockerでUID/GIDを変える](20190504.md)
 - [2020-05-03 UbuntuにJekyllを入れる](20200503.md)
 - [2020-05-04 Ubuntu 18.04のVagrant box比較](20200504.md)
+- [2020-05-05 CentOSにJekyllを入れる](20200505.md)
 
 ## SF
 
