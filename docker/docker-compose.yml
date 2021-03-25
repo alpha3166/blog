@@ -1,9 +1,8 @@
 version: '3'
 services:
-  gh-pages:
+  blog:
     build: .
-    image: gh-pages
-    container_name: blog
+    image: blog
     ports:
       - 4000:4000
     volumes:
