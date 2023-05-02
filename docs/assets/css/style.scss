@@ -1,0 +1,25 @@
+---
+---
+
+@import "{{ site.theme }}";
+h1, h2, h3 {
+  font-family: inherit;
+  font-weight: bold;
+}
+th {
+  font-family: inherit;
+}
+th, td {
+  padding: .2em;
+}
+code, pre {
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+}
+p code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: rgba(175,184,193,0.2);
+  border-radius: 6px;
+}
