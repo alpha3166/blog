@@ -6,6 +6,6 @@ description: ことば、計算機、SF、ヒコーキ
 github:
   owner_name: alpha3166
   owner_url: https://twitter.com/alpha3166
-google_analytics: UA-138711463-1
+google_analytics: G-FJ6KMH2L76
 plugins:
   - jekyll-sitemap
