@@ -2,6 +2,14 @@
 ---
 
 @import "{{ site.theme }}";
+.portrait {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+a.header {
+  text-decoration: none;
+}
 body {
   font-family: sans-serif;
 }

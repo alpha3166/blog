@@ -43,8 +43,10 @@
 
         {% if site.github.is_project_page %}
           <p class="header">
-            <img src="{{ site.baseurl }}/img/alpha3166.jpg" alt="alpha3166" width="16px" height="16px">
-            <a class="header name" href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>
+            <a class="header name" href="{{ site.github.owner_url }}">
+              <img class="portrait" src="{{ site.baseurl }}/img/alpha3166.jpg" alt="alpha3166">
+              {{ site.github.owner_name }}
+            </a>
           </p>
         {% endif %}
 
