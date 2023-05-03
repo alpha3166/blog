@@ -10,11 +10,11 @@ To run:
 
     docker run -it --rm -v $PWD/../..:/srv/jekyll -p 4000:4000 blog-dev
 
-## With Docker-Compose
+## With Docker Compose
 
 To run:
 
-    docker-compose up
+    docker compose up
 
 ## URL
 
