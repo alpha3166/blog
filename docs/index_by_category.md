@@ -94,6 +94,7 @@
 - 2013-09-22 [auのiPhone5をiPhone5sに機種変更する](20130922.md)
 - 2013-11-16 [i文庫S・i文庫HDのnosyncフォルダ](20131116.md)
 - 2020-02-22 [SwiftUIでUIActivityIndicatorViewを使う](20200222.md)
+- 2024-01-20 [Windows使いがiPhone/iPadでHHKB](20240120.md)
 
 ### 自炊/電子書籍
 
