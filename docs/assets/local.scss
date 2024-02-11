@@ -1,0 +1,103 @@
+---
+---
+
+$spacing-unit:     30px !default;
+
+$text-color:       #111 !default;
+$brand-color:      #2a7ae2 !default;
+
+$grey-color:       #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  &:visited {
+    color: darken($brand-color, 15%);
+  }
+
+  &:hover {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+.my-site-header {
+  border-top: 5px solid $grey-color-dark;
+  border-bottom: 1px solid $grey-color-light;
+  min-height: $spacing-unit * 1.865;
+}
+
+.my-site-header>.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.my-site-header>.wrapper>div {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+}
+
+.my-site-header>.wrapper>div>div {
+  padding: 0.2em;
+}
+
+.my-site-title {
+  font-size: x-large;
+  letter-spacing: -1px;
+  &,
+  &:visited {
+    color: $grey-color-dark;
+  }
+}
+
+.my-site-description,
+.my-site-author {
+  color: gray;
+}
+
+.my-site-author-icon {
+  height: 1.4em;
+  border-radius: 50%;
+  padding-right: 0.2em;
+  vertical-align: middle;
+}
+
+.my-social {
+  position: relative;
+  top: 0.25em;
+
+  a:link,
+  a:visited {
+    color: gray
+  }
+
+  a:active,
+  a:hover {
+    text-decoration: none;
+    color: initial;
+  }
+}
+
+.my-social-icon {
+  height: 1.2em;
+  fill: currentColor;
+  padding: 0 0.2em;
+}
+
+.my-site-footer {
+  text-align: center;
+  color: gray;
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit 0;
+}

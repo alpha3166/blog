@@ -1,8 +1,12 @@
+---
+title: Software Design 2018.01～2024.03 総目次
+date: 2022-11-23 00:00:00 +0900
+---
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Software Design 2018.01～2024.03 総目次</title>
+    {%- include localhead.html -%}
     <style>
       button {
         margin: 0 0 1em 0.5em;
@@ -35,18 +39,10 @@
       }
     </style>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJ6KMH2L76"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-FJ6KMH2L76');
-    </script>
   </head>
 
   <body>
+    {%- include header.html -%}
     <h1>Software Design 2018.01～2024.03 総目次</h1>
     <table>
       <tr><th>号</th><th>目次順</th><th>タイトル</th><th>回</th><th>サブタイトル</th><th>著者</th></tr>
@@ -2376,6 +2372,7 @@
       <tr><td>2024年03月号</td><td>24</td><td>魅惑の自作シェルの世界</td><td>16</td><td>プロセスグループとフォアグラウンドプロセス</td><td>上田 隆一</td></tr>
       <tr><td>2024年03月号</td><td>25</td><td>あなたのスキルは社会に役立つ～エンジニアだからできる社会貢献～</td><td>147</td><td>たとえば「ドラ娘システム」をアプデしてみよう～テックコミュニティとジェンダー～</td><td>今村 かずき，古川 泰人，武貞 真未</td></tr>
 </table>
+    {%- include footer.html -%}
 
     <script>
       initialize();

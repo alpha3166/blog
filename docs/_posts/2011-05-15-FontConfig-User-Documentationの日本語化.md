@@ -1,0 +1,9 @@
+---
+title: "FontConfig User Documentationの日本語化"
+---
+
+FontConfigのドキュメント [FontConfig User Documentation](http://fontconfig.org/fontconfig-user.html) (man fonts-confで表示されるのと同じもの) を読むついでに日本語化してみました。ここに全文掲載するには大きすぎるようなので、[別の場所](resources/fontconfig-user_ja.html)にファイルを置きました。かなーり適当に訳しているので、日本語化した内容については一切保証しません。
+
+※バージョンメモ
+
+- fontconfig-2.8.0,1

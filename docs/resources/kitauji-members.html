@@ -1,8 +1,12 @@
+---
+title: 響け!ユーフォニアム(アニメ版)部員名簿 改訂版
+date: 2023-08-11 00:00:00 +0900
+---
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>響け!ユーフォニアム(アニメ版)部員名簿</title>
+    {%- include localhead.html -%}
     <style>
       button {
         margin: 0 0 1em 0.5em;
@@ -28,19 +32,11 @@
       }
     </style>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJ6KMH2L76"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-FJ6KMH2L76');
-    </script>
   </head>
 
   <body>
-    <h1>響け!ユーフォニアム(アニメ版)部員名簿</h1>
+    {%- include header.html -%}
+    <h1>響け!ユーフォニアム(アニメ版)部員名簿 改訂版</h1>
     <table>
       <tr><th>学年</th><th>名前</th><th>読み</th><th>性別</th><th>パート</th><th>楽器</th><th>2015年</th><th>2016年</th><th>アンコン</th><th>出身</th><th>CV</th></tr>
       <tr><td>a.2つ上</td><td>臼井 ひとし</td><td>うすい ひとし</td><td>男</td><td>クラリネット</td><td>バスクラリネット</td><td>A部門</td><td>-</td><td>-</td><td></td><td>川西健吾</td></tr>
@@ -152,6 +148,7 @@
       <tr><td>d.1つ下</td><td>屋敷 さなえ</td><td>やしき さなえ</td><td>女</td><td>ホルン</td><td>ホルン</td><td>-</td><td>A部門</td><td>02.ホルン三重奏</td><td>南中</td><td></td></tr>
       <tr><td>d.1つ下</td><td>山根 つみき</td><td>やまね つみき</td><td>女</td><td>フルート&ピッコロ</td><td>フルート</td><td>-</td><td>A部門</td><td>03.木管五重奏</td><td></td><td></td></tr>
     </table>
+    {%- include footer.html -%}
 
     <script>
       initialize();
