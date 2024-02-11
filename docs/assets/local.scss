@@ -101,3 +101,8 @@ a {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
 }
+
+.toc-box {
+  background-color: lighten($brand-color, 44%);
+  border-radius: 10px;
+}
