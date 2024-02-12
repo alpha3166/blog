@@ -125,3 +125,24 @@ a {
   text-align: end;
   margin-left: 0.5em;
 }
+
+.series-nav {
+  margin-bottom: 2em;
+}
+
+.series-name {
+  text-align: center;
+  color: white;
+  background: $brand-color;
+}
+
+.series-links {
+  background-color: lighten($brand-color, 44%);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.series-link {
+  margin: 0 0.5em;
+}
