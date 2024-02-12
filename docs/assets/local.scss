@@ -55,6 +55,7 @@ a {
 .my-site-title {
   font-size: x-large;
   letter-spacing: -1px;
+
   &,
   &:visited {
     color: $grey-color-dark;
@@ -105,4 +106,22 @@ a {
 .toc-box {
   background-color: lighten($brand-color, 44%);
   border-radius: 10px;
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-nav>div {
+  display: flex;
+}
+
+.post-nav-prev {
+  margin-right: 0.5em;
+}
+
+.post-nav-next {
+  text-align: end;
+  margin-left: 0.5em;
 }

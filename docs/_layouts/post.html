@@ -23,6 +23,20 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
+  <div class="post-nav">
+    <div class="post-nav-prev">
+      {%- if page.previous -%}
+      <div><a href="{{ page.previous.url }}">◀</a></div>
+      <div><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></div>
+      {%- endif -%}
+    </div>
+    <div class="post-nav-next">
+      {%- if page.next -%}
+      <div><a href="{{ page.next.url }}">{{ page.next.title }}</a></div>
+      <div><a href="{{ page.next.url }}">▶</a></div>
+      {%- endif -%}
+    </div>
+  </div>
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
