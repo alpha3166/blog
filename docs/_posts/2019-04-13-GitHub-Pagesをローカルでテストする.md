@@ -122,5 +122,5 @@ docker run --rm -it -v "$PWD:/srv/src" -p 4000:4000 gh-pages
 
 ※関連エントリ
 
-- [2019-04-14 GitHub Pagesの中の絶対パス]({% post_url 2019-04-14-GitHub-Pagesの中の絶対パス %})
-- [2022-10-23 GitHub Pagesにwebrickが必要になった]({% post_url 2022-10-23-GitHub-Pagesにwebrickが必要になった %})
+- [2019-04-14 GitHub Pagesの中の絶対パス]({{ site.baseurl }}{% post_url 2019-04-14-GitHub-Pagesの中の絶対パス %})
+- [2022-10-23 GitHub Pagesにwebrickが必要になった]({{ site.baseurl }}{% post_url 2022-10-23-GitHub-Pagesにwebrickが必要になった %})

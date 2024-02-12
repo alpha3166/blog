@@ -2,7 +2,7 @@
 title: "MOT Finnish-Englishの略語一覧"
 ---
 
-しばらく前に[手持ちの「三修社 12か国語大辞典」のCD-ROMからフィンランド語の辞書をEPWINGに変換してiPhoneのEBPocket for iOSに入れてみた]({% post_url 2013-02-17-iPhoneにフィンランド語の辞書を入れる %})わけですが、語数が少なかったり、途中から表示が全部イタリックやボールドになったりと、イマイチな部分も多かったりして……。
+しばらく前に[手持ちの「三修社 12か国語大辞典」のCD-ROMからフィンランド語の辞書をEPWINGに変換してiPhoneのEBPocket for iOSに入れてみた]({{ site.baseurl }}{% post_url 2013-02-17-iPhoneにフィンランド語の辞書を入れる %})わけですが、語数が少なかったり、途中から表示が全部イタリックやボールドになったりと、イマイチな部分も多かったりして……。
 
 そんな折、AppStoreにKielikone Ltd.の[MOT Finnish-English](https://itunes.apple.com/jp/app/mot-finnish-english/id398339231)という英芬-芬英辞典があるのを知り、値段も1,000円とそこそこだったので、えいやっと購入してみました。やはりこっちの方が、12か国語大辞典に入っていたWerner Söderström Osakeyhtiöよりは多少使い勝手が良さそう。
 

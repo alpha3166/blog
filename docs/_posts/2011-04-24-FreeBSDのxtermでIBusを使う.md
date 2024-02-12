@@ -127,7 +127,7 @@ set ambiwidth=double
 
 と書くことで、移動幅も2桁にあわせることができます。
 
-※[FreeBSDでMozcを使う]({% post_url 2012-05-06-FreeBSDでMozcを使う %})に関連記事を書きました。
+※[FreeBSDでMozcを使う]({{ site.baseurl }}{% post_url 2012-05-06-FreeBSDでMozcを使う %})に関連記事を書きました。
 
 ※バージョンメモ
 

@@ -2,7 +2,7 @@
 title: "gpart destroyコマンドの挙動を確かめる"
 ---
 
-先日[FreeBSDでGPTを使う]({% post_url 2011-10-09-FreeBSDでGPTを使う %})テストをしたときに、ディスクのパーティションテーブルが空ではなくgpart createがエラーになったので、まずはgpart destroy -Fで既存のパーティションテーブルを破棄する、ということがありました。
+先日[FreeBSDでGPTを使う]({{ site.baseurl }}{% post_url 2011-10-09-FreeBSDでGPTを使う %})テストをしたときに、ディスクのパーティションテーブルが空ではなくgpart createがエラーになったので、まずはgpart destroy -Fで既存のパーティションテーブルを破棄する、ということがありました。
 
 このgpart destroy -Fって、gpart(8)のマニュアルを見ても「パーティションテーブルをdestroyする」としか書かれていません。実際には何をやっているのか気になったので、少し試してみました。
 
