@@ -1,5 +1,6 @@
 ---
 title: "最小限の設定でFreeBSDをZFSから起動する"
+category: PC管理
 ---
 
 FreeBSDのファイルサーバにZFSを導入しようかなと思っているのですが、ZFSのことを何も知らないので、前回Win7機にインストールしたVirtualBoxでいろいろ試行錯誤しています。

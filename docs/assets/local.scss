@@ -1,14 +1,13 @@
 ---
 ---
+$spacing-unit: 30px !default;
 
-$spacing-unit:     30px !default;
+$text-color: #111 !default;
+$brand-color: #2a7ae2 !default;
 
-$text-color:       #111 !default;
-$brand-color:      #2a7ae2 !default;
-
-$grey-color:       #828282 !default;
+$grey-color: #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
+$grey-color-dark: darken($grey-color, 25%) !default;
 
 body {
   margin: 0;
@@ -145,4 +144,40 @@ a {
 
 .series-link {
   margin: 0 0.5em;
+}
+
+.filter {
+  margin-bottom: 2em;
+  background-color: lighten($brand-color, 44%);
+
+  .filter-reset,
+  .category {
+    cursor: pointer;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+  }
+}
+
+.post-list .category {
+  cursor: pointer;
+}
+
+.category,
+.filter-reset {
+  display: inline-block;
+  min-width: 3em;
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  color: white;
+  background: lighten($brand-color, 25%);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.nega,
+.filter-reset {
+  color: lighten($brand-color, 25%);
+  background: white;
 }

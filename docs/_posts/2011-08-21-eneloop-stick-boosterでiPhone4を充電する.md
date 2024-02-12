@@ -1,5 +1,6 @@
 ---
 title: "eneloop stick boosterでiPhone4を充電する"
+category: スマホ
 ---
 
 iPhone4の非常用電源として、1か月ほど前に三洋電機の[スティックブースター](http://jp.sanyo.com/eneloop/lineup/booster02.html)(eneloop stick booster KBC-D1BS)を買い、鞄に放り込んで持ち歩いています。その点検も兼ねて、電池残量ゼロから満充電までどのくらいかかるか、実測してみました。

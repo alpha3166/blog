@@ -1,5 +1,6 @@
 ---
 title: "Yahoo!のブログにYouTubeの動画を埋め込む"
+category: ウェブページ作り
 ---
 
 Yahoo! JAPANのブログにYouTubeの動画を埋め込んで表示させる方法が分かりにくかったので、メモしておきます。

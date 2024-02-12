@@ -1,5 +1,6 @@
 ---
 title: "MavenのDockerでUID/GIDを変える"
+category: OS仮想化
 ---
 
 ## MavenをDocker公式イメージで実行する

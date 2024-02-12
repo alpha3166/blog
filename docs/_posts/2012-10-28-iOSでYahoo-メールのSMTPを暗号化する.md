@@ -1,5 +1,6 @@
 ---
 title: "iOSでYahoo!メールのSMTPを暗号化する"
+category: スマホ
 ---
 
 Yahoo! JAPANのメールは、iPhoneやiPadの「プッシュ」に対応していて、メールが届いたらリアルタイムで通知してくれるので、とても便利ですよね。

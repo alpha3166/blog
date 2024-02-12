@@ -1,5 +1,6 @@
 ---
 title: "GitHub Pagesにwebrickが必要になった"
+category: ウェブページ作り
 ---
 
 ひさびさに、[GitHub Pagesをローカルでテストする](20190413.html)に書いた手順でJekyllを立ち上げてみたら、こんなエラーが出て起動に失敗した。

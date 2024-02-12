@@ -18,9 +18,12 @@ layout: default
       <time class="dt-published" datetime="{{ page.update | date_to_xmlschema }}" itemprop="dateUpdated">
         ({{ page.update | date: date_format }} 更新)
       </time>
-      {%- endif -%}</p>
+      {%- endif -%}
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}
+      {%- if page.category -%}
+      <span class="category">{{ page.category }}</span>
       {%- endif -%}</p>
   </header>
   <div class="toc-box">{% include toc.html html=content class="toc" %}</div>

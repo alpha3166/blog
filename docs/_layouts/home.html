@@ -4,28 +4,60 @@ layout: default
 
 <div class="home">
   {%- if site.posts.size > 0 -%}
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}
-          {%- if post.update -%}
-          &#x20;({{ post.update | date: date_format }} 更新)
-          {%- endif -%}
-        </span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+  <div class="filter">
+    <span class="filter-reset">すべて表示</span>
+    {%- assign categories = site.categories | sort -%}
+    {%- for category in categories -%}
+    <span class="category">{{ category[0] }}</span>
+    {%- endfor -%}
+  </div>
+  <ul class="post-list">
+    {%- for post in site.posts -%}
+    <li class="{%- if post.category -%}{{ post.category }}{%- endif -%}">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <span class="post-meta">{{ post.date | date: date_format }}
+        {%- if post.update -%}
+        &#x20;({{ post.update | date: date_format }} 更新)
         {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
+        {%- if post.category -%}
+        <span class="category">{{ post.category }}</span>
+        {%- endif -%}
+      </span>
+      <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+      {%- if site.show_excerpts -%}
+      {{ post.excerpt }}
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
   {%- endif -%}
-
   {{ content }}
 </div>
+<script>
+  function applyFilter() {
+    document.querySelectorAll('.filter .category').forEach(span => {
+      if (span.textContent === this.textContent) {
+        this.classList.remove('nega');
+      } else {
+        span.classList.add("nega")
+      }
+    });
+    document.querySelectorAll('.post-list>li').forEach(li => {
+      if (li.classList.contains(this.textContent)) {
+        li.style.display = 'list-item';
+      } else {
+        li.style.display = 'none';
+      }
+    });
+  }
+  function resetFilter() {
+    document.querySelectorAll('.filter .category').forEach(span => {
+      span.classList.remove("nega")
+    });
+    document.querySelectorAll('.post-list>li').forEach(li => {
+      li.style.display = 'list-item';
+    });
+  }
+  document.querySelectorAll('.category').forEach(span => span.onclick = applyFilter);
+  document.querySelector('.filter-reset').onclick = resetFilter;
+</script>

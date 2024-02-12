@@ -1,5 +1,6 @@
 ---
 title: "FreeBSDでGPTを使う"
+category: PC管理
 ---
 
 3TBのHDDがかなり安くなってきました。[サハロフの秋葉原レポート](http://www2s.biglobe.ne.jp/~sakharov/)によると、今週の最安値は8,670円です。2TBまでならHDDのパーティショニングはMBR(Master Boot Record)でしのげましたが、それを超えるとGPT(GUID Partition Table)にする必要があります。Windowsだと、GPTのドライブからブートするにはマザーボードがEFI(Extensible Firmware Interface)でないとだめですが、FreeBSDではBIOS経由でもGPTのドライブからブートできるようなので、試してみました。
