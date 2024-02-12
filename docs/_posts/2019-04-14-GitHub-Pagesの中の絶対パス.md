@@ -3,7 +3,7 @@ title: "GitHub Pagesの中の絶対パス"
 update: 2024-02-10 00:00:00 +0900
 ---
 
-GitHub Pagesで、サイト内のリンクを**絶対パスで**張るときは、変数`site.baseurl`を使う必要がある。そうしないと、公開サイトとローカルの両方で有効なパスにならないからだ。前回書いたように、[GitHub Pagesをローカルでテストする]({{ site.baseurl }}{% post_url 2019-04-13-GitHub-Pagesをローカルでテストする %})ためには、この考慮が必要になる。
+GitHub Pagesで、サイト内のリンクを**絶対パスで**張るときは、変数`site.baseurl`を使う必要がある。そうしないと、公開サイトとローカルの両方で有効なパスにならないからだ。前回書いたように、[GitHub Pagesをローカルでテストする](20190413.html)ためには、この考慮が必要になる。
 
 例えば、サイトのトップにindex.htmlがあって、ディレクトリの深いところからトップに戻るリンクを張るとする。ここで絶対パスを
 
@@ -62,5 +62,5 @@ docker run --rm -it -v "$PWD:/srv/src" -p 4000:4000 gh-pages
 
 ※関連エントリ
 
-- [2019-04-13 GitHub Pagesをローカルでテストする]({{ site.baseurl }}{% post_url 2019-04-13-GitHub-Pagesをローカルでテストする %})
-- [2022-10-23 GitHub Pagesにwebrickが必要になった]({{ site.baseurl }}{% post_url 2022-10-23-GitHub-Pagesにwebrickが必要になった %})
+- [2019-04-13 GitHub Pagesをローカルでテストする](20190413.html)
+- [2022-10-23 GitHub Pagesにwebrickが必要になった](20221023.html)
