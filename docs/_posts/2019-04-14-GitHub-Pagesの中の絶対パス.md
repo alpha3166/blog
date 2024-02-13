@@ -2,6 +2,7 @@
 title: "GitHub Pagesの中の絶対パス"
 category: ウェブページ作り
 update: 2024-02-10 00:00:00 +0900
+series: github-pages
 ---
 
 GitHub Pagesで、サイト内のリンクを**絶対パスで**張るときは、変数`site.baseurl`を使う必要がある。そうしないと、公開サイトとローカルの両方で有効なパスにならないからだ。前回書いたように、[GitHub Pagesをローカルでテストする](20190413.html)ためには、この考慮が必要になる。
@@ -60,8 +61,3 @@ docker run --rm -it -v "$PWD:/srv/src" -p 4000:4000 gh-pages
 
 - 2020-06-11 誤記訂正。
 - 2024-02-10 Jekyll(というか、正確にはLiquid)の[変数展開をエスケープする手段](https://stackoverflow.com/questions/3330979/outputting-literal-curly-braces-in-liquid-templates)を見つけたので、例の中の全角波括弧を半角に修正。
-
-※関連エントリ
-
-- [2019-04-13 GitHub Pagesをローカルでテストする](20190413.html)
-- [2022-10-23 GitHub Pagesにwebrickが必要になった](20221023.html)

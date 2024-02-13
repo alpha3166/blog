@@ -2,6 +2,7 @@
 title: "GitHub Pagesをローカルでテストする"
 category: ウェブページ作り
 update: 2020-06-11 00:00:00 +0900
+series: github-pages
 ---
 
 GitHub Pagesをローカルでテストする方法は、公式ページの[Testing your GitHub Pages site locally with Jekyll](https://help.github.com/en/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll)で説明されてるんだけど、これが結構分かりにくい。初心者の自分には、何が必須で何がオプションなのか、よくわからなかったのですよ。
@@ -120,8 +121,3 @@ docker run --rm -it -v "$PWD:/srv/src" -p 4000:4000 gh-pages
 ※更新履歴
 
 - 2020-06-11 外部リンク最新化、表現修正、誤記訂正。
-
-※関連エントリ
-
-- [2019-04-14 GitHub Pagesの中の絶対パス](20190414.html)
-- [2022-10-23 GitHub Pagesにwebrickが必要になった](20221023.html)

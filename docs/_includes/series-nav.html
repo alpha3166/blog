@@ -1,9 +1,9 @@
-{%- assign tuples = include.tuples | split: "," -%}
+{%- assign tuples = include.tuples | split: "||" -%}
 <div class="series-nav">
   <div class="series-name">{{ include.name }}</div>
   <div class="series-links">
     {%- for tuple in tuples -%}
-      {%- assign elements = tuple | split: " " -%}
+      {%- assign elements = tuple | split: "|" -%}
       {%- assign temp_url = elements[0] | prepend: "/" | append: ".html" -%}
       {%- if page.url == temp_url -%}
         <div class="series-link selected-series-link">{{ elements[1] }}</div>

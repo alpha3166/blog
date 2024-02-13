@@ -1,6 +1,7 @@
 ---
 title: "GitHub Pagesにwebrickが必要になった"
 category: ウェブページ作り
+series: github-pages
 ---
 
 ひさびさに、[GitHub Pagesをローカルでテストする](20190413.html)に書いた手順でJekyllを立ち上げてみたら、こんなエラーが出て起動に失敗した。
@@ -26,8 +27,3 @@ EXPOSE  4000
 WORKDIR /srv/src
 CMD     ["bundle", "exec", "jekyll", "serve", "--destination", "/srv/jekyll", "--host", "0.0.0.0", "--baseurl", ""]
 ```
-
-※関連エントリ
-
-- [2019-04-13 GitHub Pagesをローカルでテストする](20190413.html)
-- [2019-04-14 GitHub Pagesの中の絶対パス](20190414.html)
