@@ -102,9 +102,15 @@ a {
   padding: $spacing-unit 0;
 }
 
-.toc-box {
+.toc {
+  margin-bottom: initial;
+}
+
+div:has(> .toc) {
   background-color: lighten($brand-color, 44%);
-  border-radius: 10px;
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  margin-bottom: $spacing-unit;
 }
 
 .post-nav {

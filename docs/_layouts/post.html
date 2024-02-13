@@ -40,7 +40,9 @@ layout: default
       <span class="category">{{ page.category }}</span>
       {%- endif -%}</p>
   </header>
-  <div class="toc-box">{% include toc.html html=content class="toc" %}</div>
+
+  <div>{% include toc.html html=content class="toc" %}</div>
+
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
