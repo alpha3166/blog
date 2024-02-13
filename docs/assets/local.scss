@@ -156,6 +156,10 @@ div:has(> .toc) {
   margin: 0 0.5em;
 }
 
+.selected-series-link {
+  font-weight: bold;
+}
+
 .filter {
   margin-bottom: 2em;
   background-color: lighten($brand-color, 44%);
