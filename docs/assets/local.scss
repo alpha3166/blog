@@ -112,6 +112,10 @@ a {
   justify-content: space-between;
 }
 
+.post-nav:first-child {
+  margin-bottom: $spacing-unit;
+}
+
 .post-nav>div {
   display: flex;
 }

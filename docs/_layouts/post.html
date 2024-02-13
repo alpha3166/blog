@@ -2,6 +2,21 @@
 layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-nav">
+    <div class="post-nav-prev">
+      {%- if page.previous -%}
+      <div><a href="{{ page.previous.url | relative_url }}">◀</a></div>
+      <div><a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a></div>
+      {%- endif -%}
+    </div>
+    <div class="post-nav-next">
+      {%- if page.next -%}
+      <div><a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a></div>
+      <div><a href="{{ page.next.url | relative_url }}">▶</a></div>
+      {%- endif -%}
+    </div>
+  </div>
+
   {%- if page.series -%}
     {%- include_relative series/{{ page.series }}.html -%}
   {%- endif -]%}
