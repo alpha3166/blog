@@ -2,12 +2,11 @@
 layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  {%- if page.series -%}
+    {%- include_relative series/{{ page.series }}.html -%}
+  {%- endif -]%}
 
   <header class="post-header">
-    {%- if page.series -%}
-      {%- include_relative series/{{ page.series }}.html -%}
-    {%- endif -]%}
-
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -30,6 +29,11 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
+
+  {%- if page.series -%}
+    {%- include_relative series/{{ page.series }}.html -%}
+  {%- endif -]%}
+
   <div class="post-nav">
     <div class="post-nav-prev">
       {%- if page.previous -%}
