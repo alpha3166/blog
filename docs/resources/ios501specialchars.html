@@ -1,73 +1,64 @@
 ---
-title: iOS 5.0.1 Special Characters
+layout: post
+title: "iOS 5.0.1 Special Characters"
 date: 2012-02-19 00:00:00 +0900
 ---
-<!DOCTYPE html>
-<html lang="en">
- <head>
-  <meta charset="UTF-8">
-  {%- include localhead.html -%}
-  <style>.deadkey{background-color:red}</style>
- </head>
- <body>
-  {%- include header.html -%}
-  <h1>iOS 5.0.1 Special Characters</h1>
+<p>This table indicates what character will be inserted when you type the external hardware keyboard's key with "option" or "option+shift" modifier key. Made under iPhone 4, iOS 5.0.1, English keyboard layout, <a href="http://www.reudo.co.jp/rboardk/bt_kb/index.html">REUDO RBK-2300BTi</a> and Unicoder Pro 1.1.2.</p>
+<table>
+  <tr><th>key</th><th colspan="2">with option</th><th colspan="2">with option+shift</th></tr>
+  <tr><td>` ~</td><td colspan="2">(dead key for à/è/ì/ò/ù/À/È/Ì/Ò/Ù)</td><td>&#x0060;</td><td>U+0060 GRAVE ACCENT</td></tr>
+  <tr><td>1 !</td><td>&#x00A1;</td><td>U+00A1 INVERTED EXCLAMATION MARK</td><td>&#x2044;</td><td>U+2044 FRACTION SLASH</td></tr>
+  <tr><td>2 @</td><td>&#x2122;</td><td>U+2122 TRADE MARK SIGN</td><td>&#x20AC;</td><td>U+20AC EURO SIGN</td></tr>
+  <tr><td>3 #</td><td>&#x00A3;</td><td>U+00A3 POUND SIGN</td><td>&#x2039;</td><td>U+2039 SINGLE LEFT-POINTING ANGLE QUOTATION MARK</td></tr>
+  <tr><td>4 $</td><td>&#x00A2;</td><td>U+00A2 CENT SIGN</td><td>&#x203A;</td><td>U+203A SINGLE RIGHT-POINTING ANGLE QUOTATION MARK</td></tr>
+  <tr><td>5 %</td><td>&#x221E;</td><td>U+221E INFINITY</td><td>&#xFB01;</td><td>U+FB01 LATIN SMALL LIGATURE FI</td></tr>
+  <tr><td>6 ^</td><td>&#x00A7;</td><td>U+00A7 SECTION SIGN</td><td>&#xFB02;</td><td>U+FB02 LATIN SMALL LIGATURE FL</td></tr>
+  <tr><td>7 &amp;</td><td>&#x00B6;</td><td>U+00B6 PILCROW SIGN</td><td>&#x2021;</td><td>U+2021 DOUBLE DAGGER</td></tr>
+  <tr><td>8 *</td><td>&#x2022;</td><td>U+2022 BULLET</td><td>&#x00B0;</td><td>U+00B0 DEGREE SIGN</td></tr>
+  <tr><td>9 (</td><td>&#x00AA;</td><td>U+00AA FEMININE ORDINAL INDICATOR</td><td>&#x00B7;</td><td>U+00B7 MIDDLE DOT</td></tr>
+  <tr><td>0 )</td><td>&#x00BA;</td><td>U+00BA MASCULINE ORDINAL INDICATOR</td><td>&#x201A;</td><td>U+201A SINGLE LOW-9 QUOTATION MARK</td></tr>
+  <tr><td>- _</td><td>&#x2013;</td><td>U+2013 EN DASH</td><td>&#x2014;</td><td>U+2014 EM DASH</td></tr>
+  <tr><td>= +</td><td>&#x2260;</td><td>U+2260 NOT EQUAL TO</td><td>&#x00B1;</td><td>U+00B1 PLUS-MINUS SIGN</td></tr>
+  <tr><td>q Q</td><td>&#x0153;</td><td>U+0153 LATIN SMALL LIGATURE OE</td><td>&#x0152;</td><td>U+0152 LATIN CAPITAL LIGARURE OE</td></tr>
+  <tr><td>w W</td><td>&#x2211;</td><td>U+2211 N-ARY SUMMATION</td><td>&#x201E;</td><td>U+201E DOUBLE LOW-9 QUOTATION MARK</td></tr>
+  <tr><td>e E</td><td colspan="2">(dead key for á/é/í/ó/ú/Á/É/Í/Ó/Ú)</td><td>&#x00B4;</td><td>U+00B4 ACUTE ACCENT</td></tr>
+  <tr><td>r R</td><td>&#x00AE;</td><td>U+00AE REGISTERED SIGN</td><td>&#x2030;</td><td>U+2030 PER MILLE SIGN</td></tr>
+  <tr><td>t T</td><td>&#x2020;</td><td>U+2020 DAGGER</td><td>&#x02C7;</td><td>U+02C7 CARON</td></tr>
+  <tr><td>y Y</td><td>&#x00A5;</td><td>U+00A5 YEN SIGN</td><td>&#x00C1;</td><td>U+00C1 LATIN CAPITAL LETTER A WITH ACUTE</td></tr>
+  <tr><td>u U</td><td colspan="2">(dead key for ä/ë/ï/ö/ü/ÿ/Ä/Ë/Ï/Ö/Ü/Ÿ)</td><td>&#x00A8;</td><td>U+00A8 DIAERESIS</td></tr>
+  <tr><td>i I</td><td colspan="2">(dead key for â/ê/î/ô/û/Â/Ê/Î/Ô/Û)</td><td>&#x02C6;</td><td>U+02C6 MODIFIER LETTER CIRCUMFLEX ACCENT</td></tr>
+  <tr><td>o O</td><td>&#x00F8;</td><td>U+00F8 LATIN SMALL LETTER O WITH STROKE</td><td>&#x00D8;</td><td>U+00D8 LATIN CAPITAL LETTER O WITH STROKE</td></tr>
+  <tr><td>p P</td><td>&#x03C0;</td><td>U+03C0 GREEK SMALL LETTER PI</td><td>&#x220F;</td><td>U+220F N-ARY PRODUCT</td></tr>
+  <tr><td>[ {</td><td>&#x201C;</td><td>U+201C LEFT DOUBLE QUOTATION MARK</td><td>&#x201D;</td><td>U+201D RIGHT DOUBLE QUOTATION MARK</td></tr>
+  <tr><td>] }</td><td>&#x2018;</td><td>U+2018 LEFT SINGLE QUOTATION MARK</td><td>&#x2019;</td><td>U+2019 RIGHT SINGLE QUOTATION MARK</td></tr>
+  <tr><td>\ |</td><td>&#x00AB;</td><td>U+00AB LEFT-POINTING DOUBLE ANGLE QUOTATION MARK</td><td colspan="2">(no character assigned)</td></tr>
+  <tr><td>a A</td><td>&#x00E5;</td><td>U+00E5 LATIN SMALL LETTER A WITH RING ABOVE</td><td>&#x00C5;</td><td>U+00C5 LATIN CAPITAL LETTER A WITH RING ABOVE</td></tr>
+  <tr><td>s S</td><td>&#x00DF;</td><td>U+00DF LATIN SMALL LETTER SHARP S</td><td>&#x00CD;</td><td>U+00CD LATIN CAPITAL LETTER I WITH ACUTE</td></tr>
+  <tr><td>d D</td><td>&#x2202;</td><td>U+2202 PARTIAL DIFFERENTIAL</td><td>&#x00CE;</td><td>U+00CE LATIN CAPITAL LETTER I WITH CIRCUMFLEX</td></tr>
+  <tr><td>f F</td><td>&#x0192;</td><td>U+0192 LATIN SMALL LETTER F WITH HOOK</td><td>&#x00CF;</td><td>U+00CF LATIN CAPITAL LETTER I WITH DIAERESIS</td></tr>
+  <tr><td>g G</td><td>&#x00A9;</td><td>U+00A9 COPYRIGHT SIGN</td><td>&#x02DD;</td><td>U+02DD DOUBLE ACUTE ACCENT</td></tr>
+  <tr><td>h H</td><td>&#x02D9;</td><td>U+02D9 DOT ABOVE</td><td>&#x00D3;</td><td>U+00D3 LATIN CAPITAL LETTER O WITH ACUTE</td></tr>
+  <tr><td>j J</td><td>&#x2206;</td><td>U+2206 INCREMENT</td><td>&#x00D4;</td><td>U+00D4 LATIN CAPITAL LETTER O WITH CIRCUMFLEX</td></tr>
+  <tr><td>k K</td><td>&#x02DA;</td><td>U+02DA RING ABOVE</td><td>&#xF8FF;</td><td>U+F8FF (Private Use Area: Apple Mark in iOS)</td></tr>
+  <tr><td>l L</td><td>&#x00AC;</td><td>U+00AC NOT SIGN</td><td>&#x00D2;</td><td>U+00D2 LATIN CAPITAL LETTER O WITH GRAVE</td></tr>
+  <tr><td>; :</td><td>&#x2026;</td><td>U+2026 HORIZONTAL ELLIPSIS</td><td>&#x00DA;</td><td>U+00DA LATIN CAPITAL LETTER U WITH ACUTE</td></tr>
+  <tr><td>' "</td><td>&#x00E6;</td><td>U+00E6 LATIN SMALL LETTER AE</td><td>&#x00C6;</td><td>U+00C6 LATIN CAPITAL LETTER AE</td></tr>
+  <tr><td>z Z</td><td>&#x03A9;</td><td>U+03A9 GREEK CAPITAL LETTER OMEGA</td><td colspan="2">(no character assigned)</td></tr>
+  <tr><td>x X</td><td>&#x2248;</td><td>U+2248 ALMOST EQUAL TO</td><td colspan="2">(no character assigned)</td></tr>
+  <tr><td>c C</td><td>&#x00E7;</td><td>U+00E7 LATIN SMALL LETTER C WITH CEDILLA</td><td colspan="2">(no character assigned)</td></tr>
+  <tr><td>v V</td><td>&#x221A;</td><td>U+221A SQUARE ROOT</td><td colspan="2">(no character assigned)</td></tr>
+  <tr><td>b B</td><td>&#x222B;</td><td>U+222B INTEGRAL</td><td colspan="2">(no character assigned)</td></tr>
+  <tr><td>n N</td><td colspan="2">(dead key for ã/ñ/õ/Ã/Ñ/Õ)<td>&#x02DC;</td><td>U+02DC SMALL TILDE</td></tr>
+  <tr><td>m M</td><td>&#x00B5;</td><td>U+00B5 MICRO SIGN</td><td>&#x00C2;</td><td>U+00C2 LATIN CAPITAL LETTER A WITH CIRCUMFLEX</td></tr>
+  <tr><td>, &lt;</td><td>&#x2264;</td><td>U+2264 LESS-THAN OR EQUAL TO</td><td>&#x00AF;</td><td>U+00AF MACRON</td></tr>
+  <tr><td>. &gt;</td><td>&#x2265;</td><td>U+2265 GREATER-THAN OR EQUAL TO</td><td>&#x02D8;</td><td>U+02D8 BREVE</td></tr>
+  <tr><td>/ ?</td><td>&#x00F7;</td><td>U+00F7 DIVISION SIGN</td><td colspan="2">(no character assigned)</td></tr>
+</table>
 
-  <p>This table indicates what character will be inserted when you type the external hardware keyboard's key with "option" or "option+shift" modifier key. Made under iPhone 4, iOS 5.0.1, English keyboard layout, <a href="http://www.reudo.co.jp/rboardk/bt_kb/index.html">REUDO RBK-2300BTi</a> and Unicoder Pro 1.1.2.</p>
-  <table border="1">
-   <tr><th>key</th><th colspan="2">with option</th><th colspan="2">with option+shift</th></tr>
-   <tr><td>` ~</td><td colspan="2">(dead key for à/è/ì/ò/ù/À/È/Ì/Ò/Ù)</td><td>&#x0060;</td><td>U+0060 GRAVE ACCENT</td></tr>
-   <tr><td>1 !</td><td>&#x00A1;</td><td>U+00A1 INVERTED EXCLAMATION MARK</td><td>&#x2044;</td><td>U+2044 FRACTION SLASH</td></tr>
-   <tr><td>2 @</td><td>&#x2122;</td><td>U+2122 TRADE MARK SIGN</td><td>&#x20AC;</td><td>U+20AC EURO SIGN</td></tr>
-   <tr><td>3 #</td><td>&#x00A3;</td><td>U+00A3 POUND SIGN</td><td>&#x2039;</td><td>U+2039 SINGLE LEFT-POINTING ANGLE QUOTATION MARK</td></tr>
-   <tr><td>4 $</td><td>&#x00A2;</td><td>U+00A2 CENT SIGN</td><td>&#x203A;</td><td>U+203A SINGLE RIGHT-POINTING ANGLE QUOTATION MARK</td></tr>
-   <tr><td>5 %</td><td>&#x221E;</td><td>U+221E INFINITY</td><td>&#xFB01;</td><td>U+FB01 LATIN SMALL LIGATURE FI</td></tr>
-   <tr><td>6 ^</td><td>&#x00A7;</td><td>U+00A7 SECTION SIGN</td><td>&#xFB02;</td><td>U+FB02 LATIN SMALL LIGATURE FL</td></tr>
-   <tr><td>7 &amp;</td><td>&#x00B6;</td><td>U+00B6 PILCROW SIGN</td><td>&#x2021;</td><td>U+2021 DOUBLE DAGGER</td></tr>
-   <tr><td>8 *</td><td>&#x2022;</td><td>U+2022 BULLET</td><td>&#x00B0;</td><td>U+00B0 DEGREE SIGN</td></tr>
-   <tr><td>9 (</td><td>&#x00AA;</td><td>U+00AA FEMININE ORDINAL INDICATOR</td><td>&#x00B7;</td><td>U+00B7 MIDDLE DOT</td></tr>
-   <tr><td>0 )</td><td>&#x00BA;</td><td>U+00BA MASCULINE ORDINAL INDICATOR</td><td>&#x201A;</td><td>U+201A SINGLE LOW-9 QUOTATION MARK</td></tr>
-   <tr><td>- _</td><td>&#x2013;</td><td>U+2013 EN DASH</td><td>&#x2014;</td><td>U+2014 EM DASH</td></tr>
-   <tr><td>= +</td><td>&#x2260;</td><td>U+2260 NOT EQUAL TO</td><td>&#x00B1;</td><td>U+00B1 PLUS-MINUS SIGN</td></tr>
-   <tr><td>q Q</td><td>&#x0153;</td><td>U+0153 LATIN SMALL LIGATURE OE</td><td>&#x0152;</td><td>U+0152 LATIN CAPITAL LIGARURE OE</td></tr>
-   <tr><td>w W</td><td>&#x2211;</td><td>U+2211 N-ARY SUMMATION</td><td>&#x201E;</td><td>U+201E DOUBLE LOW-9 QUOTATION MARK</td></tr>
-   <tr><td>e E</td><td colspan="2">(dead key for á/é/í/ó/ú/Á/É/Í/Ó/Ú)</td><td>&#x00B4;</td><td>U+00B4 ACUTE ACCENT</td></tr>
-   <tr><td>r R</td><td>&#x00AE;</td><td>U+00AE REGISTERED SIGN</td><td>&#x2030;</td><td>U+2030 PER MILLE SIGN</td></tr>
-   <tr><td>t T</td><td>&#x2020;</td><td>U+2020 DAGGER</td><td>&#x02C7;</td><td>U+02C7 CARON</td></tr>
-   <tr><td>y Y</td><td>&#x00A5;</td><td>U+00A5 YEN SIGN</td><td>&#x00C1;</td><td>U+00C1 LATIN CAPITAL LETTER A WITH ACUTE</td></tr>
-   <tr><td>u U</td><td colspan="2">(dead key for ä/ë/ï/ö/ü/ÿ/Ä/Ë/Ï/Ö/Ü/Ÿ)</td><td>&#x00A8;</td><td>U+00A8 DIAERESIS</td></tr>
-   <tr><td>i I</td><td colspan="2">(dead key for â/ê/î/ô/û/Â/Ê/Î/Ô/Û)</td><td>&#x02C6;</td><td>U+02C6 MODIFIER LETTER CIRCUMFLEX ACCENT</td></tr>
-   <tr><td>o O</td><td>&#x00F8;</td><td>U+00F8 LATIN SMALL LETTER O WITH STROKE</td><td>&#x00D8;</td><td>U+00D8 LATIN CAPITAL LETTER O WITH STROKE</td></tr>
-   <tr><td>p P</td><td>&#x03C0;</td><td>U+03C0 GREEK SMALL LETTER PI</td><td>&#x220F;</td><td>U+220F N-ARY PRODUCT</td></tr>
-   <tr><td>[ {</td><td>&#x201C;</td><td>U+201C LEFT DOUBLE QUOTATION MARK</td><td>&#x201D;</td><td>U+201D RIGHT DOUBLE QUOTATION MARK</td></tr>
-   <tr><td>] }</td><td>&#x2018;</td><td>U+2018 LEFT SINGLE QUOTATION MARK</td><td>&#x2019;</td><td>U+2019 RIGHT SINGLE QUOTATION MARK</td></tr>
-   <tr><td>\ |</td><td>&#x00AB;</td><td>U+00AB LEFT-POINTING DOUBLE ANGLE QUOTATION MARK</td><td colspan="2">(no character assigned)</td></tr>
-   <tr><td>a A</td><td>&#x00E5;</td><td>U+00E5 LATIN SMALL LETTER A WITH RING ABOVE</td><td>&#x00C5;</td><td>U+00C5 LATIN CAPITAL LETTER A WITH RING ABOVE</td></tr>
-   <tr><td>s S</td><td>&#x00DF;</td><td>U+00DF LATIN SMALL LETTER SHARP S</td><td>&#x00CD;</td><td>U+00CD LATIN CAPITAL LETTER I WITH ACUTE</td></tr>
-   <tr><td>d D</td><td>&#x2202;</td><td>U+2202 PARTIAL DIFFERENTIAL</td><td>&#x00CE;</td><td>U+00CE LATIN CAPITAL LETTER I WITH CIRCUMFLEX</td></tr>
-   <tr><td>f F</td><td>&#x0192;</td><td>U+0192 LATIN SMALL LETTER F WITH HOOK</td><td>&#x00CF;</td><td>U+00CF LATIN CAPITAL LETTER I WITH DIAERESIS</td></tr>
-   <tr><td>g G</td><td>&#x00A9;</td><td>U+00A9 COPYRIGHT SIGN</td><td>&#x02DD;</td><td>U+02DD DOUBLE ACUTE ACCENT</td></tr>
-   <tr><td>h H</td><td>&#x02D9;</td><td>U+02D9 DOT ABOVE</td><td>&#x00D3;</td><td>U+00D3 LATIN CAPITAL LETTER O WITH ACUTE</td></tr>
-   <tr><td>j J</td><td>&#x2206;</td><td>U+2206 INCREMENT</td><td>&#x00D4;</td><td>U+00D4 LATIN CAPITAL LETTER O WITH CIRCUMFLEX</td></tr>
-   <tr><td>k K</td><td>&#x02DA;</td><td>U+02DA RING ABOVE</td><td>&#xF8FF;</td><td>U+F8FF (Private Use Area: Apple Mark in iOS)</td></tr>
-   <tr><td>l L</td><td>&#x00AC;</td><td>U+00AC NOT SIGN</td><td>&#x00D2;</td><td>U+00D2 LATIN CAPITAL LETTER O WITH GRAVE</td></tr>
-   <tr><td>; :</td><td>&#x2026;</td><td>U+2026 HORIZONTAL ELLIPSIS</td><td>&#x00DA;</td><td>U+00DA LATIN CAPITAL LETTER U WITH ACUTE</td></tr>
-   <tr><td>' "</td><td>&#x00E6;</td><td>U+00E6 LATIN SMALL LETTER AE</td><td>&#x00C6;</td><td>U+00C6 LATIN CAPITAL LETTER AE</td></tr>
-   <tr><td>z Z</td><td>&#x03A9;</td><td>U+03A9 GREEK CAPITAL LETTER OMEGA</td><td colspan="2">(no character assigned)</td></tr>
-   <tr><td>x X</td><td>&#x2248;</td><td>U+2248 ALMOST EQUAL TO</td><td colspan="2">(no character assigned)</td></tr>
-   <tr><td>c C</td><td>&#x00E7;</td><td>U+00E7 LATIN SMALL LETTER C WITH CEDILLA</td><td colspan="2">(no character assigned)</td></tr>
-   <tr><td>v V</td><td>&#x221A;</td><td>U+221A SQUARE ROOT</td><td colspan="2">(no character assigned)</td></tr>
-   <tr><td>b B</td><td>&#x222B;</td><td>U+222B INTEGRAL</td><td colspan="2">(no character assigned)</td></tr>
-   <tr><td>n N</td><td colspan="2">(dead key for ã/ñ/õ/Ã/Ñ/Õ)<td>&#x02DC;</td><td>U+02DC SMALL TILDE</td></tr>
-   <tr><td>m M</td><td>&#x00B5;</td><td>U+00B5 MICRO SIGN</td><td>&#x00C2;</td><td>U+00C2 LATIN CAPITAL LETTER A WITH CIRCUMFLEX</td></tr>
-   <tr><td>, &lt;</td><td>&#x2264;</td><td>U+2264 LESS-THAN OR EQUAL TO</td><td>&#x00AF;</td><td>U+00AF MACRON</td></tr>
-   <tr><td>. &gt;</td><td>&#x2265;</td><td>U+2265 GREATER-THAN OR EQUAL TO</td><td>&#x02D8;</td><td>U+02D8 BREVE</td></tr>
-   <tr><td>/ ?</td><td>&#x00F7;</td><td>U+00F7 DIVISION SIGN</td><td colspan="2">(no character assigned)</td></tr>
-  </table>
-
-  <p>Visual map. Right column is with option, and upper column is with shift. Red ones are dead keys.</p>
-  <table border="1">
-   <tr>
+<style>.deadkey{background-color:red}</style>
+<p>Visual map. Right column is with option, and upper column is with shift. Red ones are dead keys.</p>
+<table>
+  <tr>
     <td>~ &#x0060;<br>` <span class="deadkey">`</span></td>
     <td>! &#x2044;<br>1 &#x00A1;</td>
     <td>@ &#x20AC;<br>2 &#x2122;</td>
@@ -81,8 +72,8 @@ date: 2012-02-19 00:00:00 +0900
     <td>) &#x201A;<br>0 &#x00BA;</td>
     <td>_ &#x2014;<br>- &#x2013;</td>
     <td>+ &#x00B1;<br>= &#x2260;</td>
-   </tr>
-   <tr>
+  </tr>
+  <tr>
     <td rowspan="3"></td>
     <td>Q &#x0152;<br>q &#x0153;</td>
     <td>W &#x201E;<br>w &#x2211;</td>
@@ -97,8 +88,8 @@ date: 2012-02-19 00:00:00 +0900
     <td>{ &#x201D;<br>[ &#x201C;</td>
     <td>} &#x2019;<br>] &#x2018;</td>
     <td>| <br>\ &#x00AB;</td>
-   </tr>
-   <tr>
+  </tr>
+  <tr>
     <td>A &#x00C5;<br>a &#x00E5;</td>
     <td>S &#x00CD;<br>s &#x00DF;</td>
     <td>D &#x00CE;<br>d &#x2202;</td>
@@ -110,8 +101,8 @@ date: 2012-02-19 00:00:00 +0900
     <td>L &#x00D2;<br>l &#x00AC;</td>
     <td>: &#x00DA;<br>; &#x2026;</td>
     <td>" &#x00C6;<br>' &#x00E6;</td>
-   </tr>
-   <tr>
+  </tr>
+  <tr>
     <td>Z <br>z &#x03A9;</td>
     <td>X <br>x &#x2248;</td>
     <td>C <br>c &#x00E7;</td>
@@ -122,8 +113,5 @@ date: 2012-02-19 00:00:00 +0900
     <td>&lt; &#x00AF;<br>, &#x2264;</td>
     <td>&gt; &#x02D8;<br>. &#x2265;</td>
     <td>? <br>/ &#x00F7;</td>
-   </tr>
-  </table>
- {%- include footer.html -%}
- </body>
-</html>
+  </tr>
+</table>
