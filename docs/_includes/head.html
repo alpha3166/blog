@@ -11,4 +11,13 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+  {%- if page.table contains "sortable" -%}
+    {%- include table-sortable.html -%}
+  {%- endif -%}
+  {%- if page.table contains "searchable" -%}
+    {%- include table-searchable.html -%}
+  {%- endif -%}
+  {%- if page.table contains "nowrap" -%}
+    {%- include table-nowrap.html -%}
+  {%- endif -%}
 </head>

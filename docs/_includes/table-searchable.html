@@ -1,0 +1,49 @@
+<style>
+  button {
+    margin: 0 0 1em 0.5em;
+  }
+</style>
+
+<script>
+  window.addEventListener("load", () => {
+    const table = document.querySelector('table');
+    const tableParent = table.parentElement;
+
+    const input = document.createElement('input');
+    input.addEventListener('keypress', () => {
+      if (event.key === 'Enter') filterRows();
+    });
+    tableParent.insertBefore(input, table);
+
+    const searchButton = document.createElement('button');
+    searchButton.textContent = '正規表現で検索';
+    searchButton.onclick = filterRows;
+    tableParent.insertBefore(searchButton, table);
+
+    const resetButton = document.createElement('button');
+    resetButton.textContent = '全て表示';
+    resetButton.onclick = resetFilter;
+    tableParent.insertBefore(resetButton, table);
+  })
+
+  function filterRows() {
+    const keyword = document.querySelector('input').value;
+    const regex = new RegExp(keyword, 'i');
+    const table = document.querySelector('table');
+    for (let i = 1; i < table.rows.length; i++) {
+      const row = table.rows[i];
+      row.style.display = 'none';
+      for (let j = 0; j < row.cells.length; j++) {
+        if (row.cells[j].textContent.match(regex)) {
+          row.style.display = 'table-row';
+          break;
+        }
+      }
+    }
+  }
+
+  function resetFilter() {
+    document.querySelector('input').value = '';
+    filterRows();
+  }
+</script>
