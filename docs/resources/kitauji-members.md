@@ -1,5 +1,5 @@
 ---
-layout: redirector
+layout: post
 title: "響け!ユーフォニアム(アニメ版)部員名簿 改訂版"
 date: 2023-08-11 00:00:00 +0900
 update: 2024-02-17 00:00:00 +0900

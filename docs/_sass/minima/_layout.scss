@@ -5,170 +5,95 @@
   border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
+  padding-top: $spacing-unit * 0.6;
+}
 
-  // Positioning context for the mobile navigation icon
-  position: relative;
+.site-header>.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
+
+  >div {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+
+    >div {
+      padding: 0 0.2em;
+    }
+  }
 }
 
 .site-title {
   @include relative-font-size(1.625);
   font-weight: 300;
-  line-height: $base-line-height * $base-font-size * 2.25;
-  letter-spacing: -1px;
   margin-bottom: 0;
-  float: left;
 
-  &,
-  &:visited {
+  a {
+    letter-spacing: -1px;
+  }
+
+  a:link,
+  a:visited {
     color: $grey-color-dark;
   }
-}
 
-.site-nav {
-  float: right;
-  line-height: $base-line-height * $base-font-size * 2.25;
-
-  .nav-trigger {
-      display: none;
-  }
-
-  .menu-icon {
-    display: none;
-  }
-
-  .page-link {
-    color: $text-color;
-    line-height: $base-line-height;
-
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-  @include media-query($on-palm) {
-    position: absolute;
-    top: 9px;
-    right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
-    border-radius: 5px;
-    text-align: right;
-
-    label[for="nav-trigger"] {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 36px;
-      z-index: 2;
-      cursor: pointer;
-    }
-
-    .menu-icon {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 26px;
-      line-height: 0;
-      padding-top: 10px;
-      text-align: center;
-
-      > svg {
-        fill: $grey-color-dark;
-      }
-    }
-
-    input ~ .trigger {
-      clear: both;
-      display: none;
-    }
-
-    input:checked ~ .trigger {
-      display: block;
-      padding-bottom: 5px;
-    }
-
-    .page-link {
-      display: block;
-      padding: 5px 10px;
-
-      &:not(:last-child) {
-        margin-right: 0;
-      }
-      margin-left: 20px;
-    }
+  .site-description {
+    @include relative-font-size(0.95);
+    color: $grey-color;
   }
 }
 
+.site-author {
+  @include relative-font-size(0.95);
+  color: $grey-color;
+  margin-top: 0.9em;
+  margin-bottom: 0.7em;
+
+  .site-author-icon {
+    height: 1.5em;
+    border-radius: 50%;
+    margin-right: 0.2em;
+    vertical-align: middle;
+  }
+
+  .social {
+    position: relative;
+    top: 0.35em;
+
+    .social-icon {
+      height: 1.4em;
+      fill: currentColor;
+    }
+
+    a {
+      padding: 0.2em;
+    }
+
+    a:link,
+    a:visited {
+      color: $grey-color
+    }
+
+    a:active,
+    a:hover {
+      text-decoration: none;
+      color: initial;
+    }
+  }
+}
 
 
 /**
  * Site footer
  */
 .site-footer {
+  text-align: center;
+  color: $grey-color;
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
 }
-
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
-}
-
-.contact-list,
-.social-media-list {
-  list-style: none;
-  margin-left: 0;
-}
-
-.footer-col-wrapper {
-  @include relative-font-size(0.9375);
-  color: $grey-color;
-  margin-left: -$spacing-unit / 2;
-}
-
-.footer-col {
-  float: left;
-  margin-bottom: $spacing-unit / 2;
-  padding-left: $spacing-unit / 2;
-}
-
-.footer-col-1 {
-  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
-  }
-
-  .footer-col-3 {
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-
-@include media-query($on-palm) {
-  .footer-col {
-    float: none;
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-
 
 
 /**
@@ -191,7 +116,7 @@
   margin-left: 0;
   list-style: none;
 
-  > li {
+  >li {
     margin-bottom: $spacing-unit;
   }
 }
@@ -206,6 +131,47 @@
   @include relative-font-size(1.5);
 }
 
+.post-category {
+  display: inline-block;
+  min-width: 3em;
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  color: white;
+  background: lighten($brand-color, 25%);
+  border-radius: 5px;
+  font-size: $small-font-size;
+  text-align: center;
+  border: 1px solid lighten($brand-color, 25%);
+}
+
+.home {
+  .post-category-hidden {
+    color: lighten($brand-color, 25%);
+    background: white;
+  }
+
+  .post-list-filter {
+    margin-bottom: $spacing-unit * 1.2;
+
+    .post-list-filter-reset {
+      @extend .post-category;
+      @extend .post-category-hidden;
+    }
+
+    .post-list-filter-reset,
+    .post-category {
+      margin-top: 0.3em;
+      margin-bottom: 0.3em;
+    }
+  }
+
+  .post-category,
+  .post-list-filter-reset {
+    cursor: pointer;
+  }
+}
 
 
 /**
@@ -223,6 +189,17 @@
   @include media-query($on-laptop) {
     @include relative-font-size(2.25);
   }
+}
+
+div:has(> .post-toc) {
+  background-color: lighten($brand-color, 44%);
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  margin-bottom: $spacing-unit;
+}
+
+.post-toc {
+  margin-bottom: initial;
 }
 
 .post-content {
@@ -260,6 +237,53 @@
 
     @include media-query($on-laptop) {
       @include relative-font-size(1.125);
+    }
+  }
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+
+  &:first-child {
+    margin-bottom: $spacing-unit;
+  }
+
+  >div {
+    display: flex;
+  }
+
+  .post-nav-prev {
+    margin-right: 0.5em;
+  }
+
+  .post-nav-next {
+    text-align: end;
+    margin-left: 0.5em;
+  }
+}
+
+.series-nav {
+  margin-bottom: $spacing-unit;
+
+  .series-name {
+    text-align: center;
+    color: white;
+    background: $brand-color;
+  }
+
+  .series-links {
+    background-color: lighten($brand-color, 44%);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    .series-link {
+      margin: 0 0.5em;
+    }
+
+    .selected-series-link {
+      font-weight: bold;
     }
   }
 }

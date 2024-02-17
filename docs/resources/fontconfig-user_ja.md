@@ -1,5 +1,5 @@
 ---
-layout: redirector
+layout: post
 title: "fonts-conf 日本語版"
 date: 2011-05-15 00:00:00 +0900
 update: 2024-02-17 00:00:00 +0900

@@ -1,15 +1,17 @@
-{%- assign tuples = include.tuples | split: "||" -%}
 <div class="series-nav">
-  <div class="series-name">{{ include.name }}</div>
+  <div class="series-name">
+    {{ include.name }}
+  </div>
   <div class="series-links">
+    {%- assign tuples = include.tuples | split: "||" -%}
     {%- for tuple in tuples -%}
-      {%- assign elements = tuple | split: "|" -%}
-      {%- assign temp_url = elements[0] | prepend: "/" | append: ".html" -%}
-      {%- if page.url == temp_url -%}
-        <div class="series-link selected-series-link">{{ elements[1] }}</div>
-      {%- else -%}
-        <div class="series-link"><a href="{{ elements[0] }}.html">{{ elements[1] }}</a></div>
-      {%- endif -%}
+    {%- assign elements = tuple | split: "|" -%}
+    {%- assign temp_url = elements[0] | prepend: "/" | append: ".html" -%}
+    {%- if temp_url == page.url -%}
+    <div class="series-link selected-series-link">{{ elements[1] }}</div>
+    {%- else -%}
+    <div class="series-link"><a href="{{ elements[0] }}.html">{{ elements[1] }}</a></div>
+    {%- endif -%}
     {%- endfor -%}
   </div>
 </div>
