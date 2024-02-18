@@ -1,7 +1,7 @@
 ---
 title: "GitHub Pagesの中の絶対パス"
 categories: ウェブ
-update: 2024-02-10 00:00:00 +0900
+update: 2024-02-18 00:00:00 +0900
 series: github-pages
 ---
 
@@ -25,6 +25,12 @@ GitHub Pagesで、サイト内のリンクを**絶対パスで**張るときは�
 
 ```markdown
 [サイトのトップ]({% raw %}{{ site.baseurl }}{% endraw %}/index.html)
+```
+
+あるいは、Liquidフィルタの`relative_url`を噛ませてもよい。`relative_url`は入力値の前に`site.baseurl`の値を追加してくれるので、上と同じ結果になる(relativeという名前だが、別に相対パスに変換されるわけではない)。
+
+```markdown
+[サイトのトップ]({% raw %}{{ "/index.html" | relative_url }}{% endraw %})
 ```
 
 GitHub Pagesのサイトでは、_config.ymlに`baseurl`を書いておかなくても、勝手に`https://alpha3166.github.io/blog`のような値が注入されるようだ。
@@ -61,3 +67,4 @@ docker run --rm -it -v "$PWD:/srv/src" -p 4000:4000 gh-pages
 
 - 2020-06-11 誤記訂正。
 - 2024-02-10 Jekyll(というか、正確にはLiquid)の[変数展開をエスケープする手段](https://stackoverflow.com/questions/3330979/outputting-literal-curly-braces-in-liquid-templates)を見つけたので、例の中の全角波括弧を半角に修正。
+- 2024-02-18 `relative_url`の記述を追加。
