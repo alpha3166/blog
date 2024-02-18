@@ -30,7 +30,7 @@ categories: 旅行
 >
 > Please forward legible copies of your ticket receipts or E-Ticket receipts that clearly show the passenger's name, date of issue, dates of travel, class of service, flight numbers, ticket numbers, fare paid, and departure and destination cities. Also be sure to include your MileagePlus account number so we can update your account. I will update the account(s) if mileage credit is due.
 >
-> If you no longer have the appropriate documentation but purchased your ticket through a travel agency, I suggest you contact the agency. Travel agents are required to keep copies of all tickets they issue. 
+> If you no longer have the appropriate documentation but purchased your ticket through a travel agency, I suggest you contact the agency. Travel agents are required to keep copies of all tickets they issue.
 
 このメールの最後に「領収書がなければ代理店が持ってるはずだから、そっから貰えよ」(大意)と書いてあるのをみて、ようやくANAで何か発行してもらえるかも、ということに気づきました。
 

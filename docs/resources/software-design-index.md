@@ -13,7 +13,7 @@ show-on-home: true
 -|-|-|-|-|-|-
 {% for article in site.data.software-design-index -%}
 {%- assign num = num | plus: 1 -%}
-{%- capture display_num%}000{{num}}{% endcapture -%}
+{%- capture display_num %}000{{ num }}{% endcapture -%}
 {%- assign display_num = display_num | slice: -4, 4 -%}
-{{display_num}}|{{article.volume}}|{{article.order}}|{{article.title}}|{{article.num}}|{{article.subtitle}}|{{article.author}}
+{{ display_num }}|{{ article.volume }}|{{ article.order }}|{{ article.title }}|{{ article.num }}|{{ article.subtitle }}|{{ article.author }}
 {% endfor %}

@@ -48,12 +48,12 @@ gem install jekyll
 
 入るコマンドのバージョンとインストール先:
 
-|コマンド|バージョン|インストール先|
-|-|-|-|
-|ruby|2.5.5p157 (古い)|/usr/bin/ruby|
-|gem|2.7.6.2 (古い)|/usr/bin/gem|
-|bundle|2.1.4 (最新)|~/bin/bundle|
-|jekyll|4.0.0 (最新)|~/bin/jekyll|
+コマンド|バージョン|インストール先
+-|-|-
+ruby|2.5.5p157 (古い)|/usr/bin/ruby
+gem|2.7.6.2 (古い)|/usr/bin/gem
+bundle|2.1.4 (最新)|~/bin/bundle
+jekyll|4.0.0 (最新)|~/bin/jekyll
 
 Gemのインストール先:
 
@@ -91,12 +91,12 @@ gem install jekyll
 
 入るコマンドのバージョンとインストール先:
 
-|コマンド|バージョン|インストール先|
-|-|-|-|
-|ruby|2.6.6p146 (1つ前)|/var/lib/snapd/snap/bin/ruby|
-|gem|3.0.3 (1つ前)|/var/lib/snapd/snap/bin/gem|
-|bundle|2.1.4 (最新)|/var/lib/snapd/snap/bin/bundle|
-|jekyll|4.0.0 (最新)|~/.gem/bin/jekyll|
+コマンド|バージョン|インストール先
+-|-|-
+ruby|2.6.6p146 (1つ前)|/var/lib/snapd/snap/bin/ruby
+gem|3.0.3 (1つ前)|/var/lib/snapd/snap/bin/gem
+bundle|2.1.4 (最新)|/var/lib/snapd/snap/bin/bundle
+jekyll|4.0.0 (最新)|~/.gem/bin/jekyll
 
 Gemのインストール先:
 
@@ -152,21 +152,21 @@ gem install jekyll
 
 入るコマンドとインストール先:
 
-|コマンド|インストール先|
-|-|-|
-|ruby|~/.rbenv/shims/ruby|
-|gem|~/.rbenv/shims/gem|
-|bundle|~/.rbenv/shims/bundle|
-|jekyll|~/.rbenv/shims/jekyll|
+コマンド|インストール先
+-|-
+ruby|~/.rbenv/shims/ruby
+gem|~/.rbenv/shims/gem
+bundle|~/.rbenv/shims/bundle
+jekyll|~/.rbenv/shims/jekyll
 
 上記は、現在使用中のバージョンのコマンドに飛ばすためのラッパー。コマンドの実体は下記。
 
-|コマンド|バージョン|インストール先|
-|-|-|-|
-|ruby|2.7.1p83 (最新)|~/.rbenv/versions/2.7.1/bin/ruby|
-|gem|3.1.2 (最新)|~/.rbenv/versions/2.7.1/bin/gem|
-|bundle|2.1.4 (最新)|~/.rbenv/versions/2.7.1/bin/bundle|
-|jekyll|4.0.0 (最新)|~/.rbenv/versions/2.7.1/bin/jekyll|
+コマンド|バージョン|インストール先
+-|-|-
+ruby|2.7.1p83 (最新)|~/.rbenv/versions/2.7.1/bin/ruby
+gem|3.1.2 (最新)|~/.rbenv/versions/2.7.1/bin/gem
+bundle|2.1.4 (最新)|~/.rbenv/versions/2.7.1/bin/bundle
+jekyll|4.0.0 (最新)|~/.rbenv/versions/2.7.1/bin/jekyll
 
 Gemのインストール先:
 

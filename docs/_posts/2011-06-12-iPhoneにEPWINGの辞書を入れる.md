@@ -39,9 +39,9 @@ ftp://192.168.0.1:12345/
 
 出力先ディレクトリは、あらかじめ作っておく必要があります。
 
-```console
-$ mkdir destdir
-$ ebzip -k -l 5 -o destdir srcdir
+```shell
+mkdir destdir
+ebzip -k -l 5 -o destdir srcdir
 ```
 
 これで、srcdirの中身がdestdirにコピーされ、その過程でHONMONファイルや外字ファイルなどは.ebzの拡張子がついた圧縮ファイルに置き換わります。EBPocketには圧縮後のフォルダを転送すればOKです。
