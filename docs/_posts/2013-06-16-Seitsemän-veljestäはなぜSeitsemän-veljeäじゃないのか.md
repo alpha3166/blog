@@ -1,6 +1,6 @@
 ---
 title: "Seitsemän veljestäはなぜSeitsemän veljeäじゃないのか"
-category: 外国語
+categories: 外国語
 ---
 
 Aleksis Kivi(アレクシス・キヴィ)の小説“Seitsemän veljestä”(7人兄弟)のveljestäは、なぜveljestäなのか。「兄弟」はフィンランド語でveliで、veljestäはその出格。でも「7人の兄弟」という意味なら、ここには分格のveljeäが来ないとおかしい。もしかしてveliにはveljes-という子音語幹があって、veljestäはveliの分格なのか。でも辞書でいくらveliを調べても、veljes-なんて語幹は無いし。

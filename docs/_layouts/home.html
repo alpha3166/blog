@@ -17,20 +17,8 @@ layout: default
   {%- if site.pages.size > 0 -%}
   <ul class="post-list">
     {%- for post in site.pages -%}
-    {%- if post.category -%}
-    <li class="{%- if post.category -%}{{ post.category }}{%- endif -%}">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <span class="post-meta">{{ post.date | date: date_format }}
-        {%- if post.update %}
-        ({{ post.update | date: date_format }} 更新)
-        {%- endif -%}
-        <span class="post-category">{{ post.category }}</span>
-      </span>
-      <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
-      {%- if site.show_excerpts -%}
-      {{ post.excerpt }}
-      {%- endif -%}
-    </li>
+    {%- if post.categories -%}
+    {%- include post-list-item.html post=post -%}
     {%- endif -%}
     {%- endfor -%}
   </ul>
@@ -40,21 +28,7 @@ layout: default
   <h2 class="post-list-heading">記事</h2>
   <ul class="post-list">
     {%- for post in site.posts -%}
-    <li class="{%- if post.category -%}{{ post.category }}{%- endif -%}">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <span class="post-meta">{{ post.date | date: date_format }}
-        {%- if post.update %}
-        ({{ post.update | date: date_format }} 更新)
-        {%- endif -%}
-        {%- if post.category -%}
-        <span class="post-category">{{ post.category }}</span>
-        {%- endif -%}
-      </span>
-      <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
-      {%- if site.show_excerpts -%}
-      {{ post.excerpt }}
-      {%- endif -%}
-    </li>
+    {%- include post-list-item.html post=post -%}
     {%- endfor -%}
   </ul>
   {%- endif -%}
@@ -62,9 +36,9 @@ layout: default
 
 <script>
   function applyFilter() {
-    document.querySelectorAll('.post-list-filter .post-category').forEach(span => {
+    document.querySelectorAll('.post-category').forEach(span => {
       if (span.textContent === this.textContent) {
-        this.classList.remove('post-category-hidden');
+        span.classList.remove('post-category-hidden');
       } else {
         span.classList.add("post-category-hidden")
       }
@@ -78,7 +52,7 @@ layout: default
     });
   }
   function resetFilter() {
-    document.querySelectorAll('.post-list-filter .post-category').forEach(span => {
+    document.querySelectorAll('.post-category').forEach(span => {
       span.classList.remove("post-category-hidden")
     });
     document.querySelectorAll('.post-list>li').forEach(li => {

@@ -32,9 +32,9 @@ layout: default
         </span>
       </span>
       {%- endif -%}
-      {%- if page.category -%}
-      <span class="post-category">{{ page.category }}</span>
-      {%- endif -%}
+      {%- for category in page.categories -%}
+      <span class="post-category">{{ category }}</span>
+      {%- endfor -%}
     </p>
   </header>
 

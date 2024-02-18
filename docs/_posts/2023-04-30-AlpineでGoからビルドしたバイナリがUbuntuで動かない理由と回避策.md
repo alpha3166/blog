@@ -1,6 +1,6 @@
 ---
 title: "AlpineでGoからビルドしたバイナリがUbuntuで動かない理由と回避策"
-category: プログラミング
+categories: プログラミング
 ---
 
 GoのプログラムをDocker HubのAlpine公式イメージでビルドし、できあがったバイナリをUbuntuなどに持っていって起動すると、ファイルはちゃんとあるのに「No such file or directory」と言われることがある。なぜだろうか。

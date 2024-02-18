@@ -1,6 +1,6 @@
 ---
 title: "MOT Finnish-Englishの略語一覧"
-category: 辞書
+categories: 辞書
 ---
 
 しばらく前に[手持ちの「三修社 12か国語大辞典」のCD-ROMからフィンランド語の辞書をEPWINGに変換してiPhoneのEBPocket for iOSに入れてみた](20130217.html)わけですが、語数が少なかったり、途中から表示が全部イタリックやボールドになったりと、イマイチな部分も多かったりして……。

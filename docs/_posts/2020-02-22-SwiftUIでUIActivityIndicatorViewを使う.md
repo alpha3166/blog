@@ -1,6 +1,6 @@
 ---
 title: "SwiftUIでUIActivityIndicatorViewを使う"
-category: プログラミング
+categories: プログラミング
 ---
 
 SwiftUIで重い処理をしているとき、あのぐるぐる回る処理中マークを表示させたい。

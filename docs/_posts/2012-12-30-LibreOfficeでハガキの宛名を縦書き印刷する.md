@@ -1,6 +1,6 @@
 ---
 title: "LibreOfficeでハガキの宛名を縦書き印刷する"
-category: アプリの使い方
+categories: アプリの使い方
 ---
 
 今年はLibreOfficeで年賀状の宛名を印刷したので、やり方をメモしておきます。去年まではMicrosoft Wordの差込印刷を使っていたのですが、さすがにdocファイルをWriterで開いても使える状態ではなかったので、Libreでイチから作り直しました。

@@ -1,6 +1,6 @@
 ---
 title: "FreeBSDのMewで全文検索する"
-category: アプリの使い方
+categories: アプリの使い方
 ---
 
 FreeBSD上のMewで、メールの全文検索を試してみました。といっても特に難しいことは何も無く、Hyper Estraierをインストールし、インデックスを作り、検索するだけでした。

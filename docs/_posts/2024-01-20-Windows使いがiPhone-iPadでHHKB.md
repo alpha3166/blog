@@ -1,6 +1,6 @@
 ---
 title: "Windows使いがiPhone/iPadでHHKB"
-category: キーボード
+categories: キーボード
 ---
 
 Windows使いがiPhoneやiPadにHHKB日本語配列をつないで使う場合、ちょっと設定を変えれば劇的に使いやすくなる。ということに今さら気づいたのだが、その設定をすぐに忘れてしまうのでメモ。

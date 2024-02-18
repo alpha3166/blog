@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Software Design 2018.01～2024.03 総目次"
-category: ソフトウェア開発
+categories: ソフトウェア開発
 date: 2022-11-23 00:00:00 +0900
 update: 2024-02-17 00:00:00 +0900
 table: sortable searchable wide

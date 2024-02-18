@@ -1,6 +1,6 @@
 ---
 title: "UbuntuにJekyllを入れる"
-category: ウェブページ作り
+categories: ウェブページ作り
 ---
 
 Ubuntu 18.04にJekyllを入れようとしたら、依存関係などが意外と面倒だったので、ちょっと整理。
