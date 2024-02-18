@@ -1,6 +1,6 @@
 ---
 title: "FontConfig User Documentationの日本語化"
-categories: Unixで日本語
+categories: パソコン
 update: 2024-02-17 00:00:00 +0900
 ---
 

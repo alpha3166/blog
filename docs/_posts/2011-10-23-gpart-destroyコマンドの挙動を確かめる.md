@@ -1,6 +1,6 @@
 ---
 title: "gpart destroyコマンドの挙動を確かめる"
-categories: PC管理
+categories: パソコン
 ---
 
 先日[FreeBSDでGPTを使う](20111009.html)テストをしたときに、ディスクのパーティションテーブルが空ではなくgpart createがエラーになったので、まずはgpart destroy -Fで既存のパーティションテーブルを破棄する、ということがありました。

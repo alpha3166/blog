@@ -1,6 +1,6 @@
 ---
 title: "NHK World Radio Japanの英語アナウンサー"
-categories: 外国語
+categories: ことば
 update: 2015-06-27 00:00:00 +0900
 ---
 

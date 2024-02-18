@@ -1,6 +1,6 @@
 ---
 title: "GitHub Pagesをローカルでテストする"
-categories: ウェブページ作り
+categories: ウェブ
 update: 2020-06-11 00:00:00 +0900
 series: github-pages
 ---

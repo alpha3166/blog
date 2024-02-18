@@ -1,6 +1,6 @@
 ---
 title: "GitHub Pagesにwebrickが必要になった"
-categories: ウェブページ作り
+categories: ウェブ
 series: github-pages
 ---
 

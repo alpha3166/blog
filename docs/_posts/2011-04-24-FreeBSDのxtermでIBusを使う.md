@@ -1,6 +1,6 @@
 ---
 title: "FreeBSDのxtermでIBusを使う"
-categories: Unixで日本語
+categories: パソコン
 ---
 
 わりと昔からFreeBSDを使っているのですが、最近の事情にぜんぜんついていってないもので、日本語環境と言えばktermにkinput2にCannaにJVimという組み合わせで使っていました。もちろん日本語ファイル名や、テキストファイルの中身のエンコーディングはeucJPです。

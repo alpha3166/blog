@@ -1,6 +1,6 @@
 ---
 title: "AFTのHDDでZFS"
-categories: PC管理
+categories: パソコン
 ---
 
 そんなわけで、FreeBSD機のZFS化をいよいよ決行です。

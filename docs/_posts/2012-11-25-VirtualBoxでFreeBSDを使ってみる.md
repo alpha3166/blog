@@ -1,6 +1,6 @@
 ---
 title: "VirtualBoxでFreeBSDを使ってみる"
-categories: OS仮想化
+categories: パソコン
 update: 2012-12-22 00:00:00 +0900
 ---
 

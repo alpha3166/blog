@@ -1,6 +1,6 @@
 ---
 title: "FreeBSDのxtermでフォントの設定をする"
-categories: Unixで日本語
+categories: パソコン
 ---
 
 [前回](20110424.html)、FreeBSD+Xorg上のxtermで、IBus+Mozcを使ってVimで日本語の文書を編集できるようにしました。ロケールはja_JP.UTF-8にしました。

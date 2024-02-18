@@ -1,6 +1,6 @@
 ---
 title: "CentOSにJekyllを入れる"
-categories: ウェブページ作り
+categories: ウェブ
 ---
 
 CentOS 8にJekyllを入れようとしたら、依存関係などが意外と面倒だったので、ちょっと整理。

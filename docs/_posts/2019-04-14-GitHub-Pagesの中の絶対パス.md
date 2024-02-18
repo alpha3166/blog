@@ -1,6 +1,6 @@
 ---
 title: "GitHub Pagesの中の絶対パス"
-categories: ウェブページ作り
+categories: ウェブ
 update: 2024-02-10 00:00:00 +0900
 series: github-pages
 ---

@@ -16,9 +16,9 @@ layout: default
 
   {%- if site.pages.size > 0 -%}
   <ul class="post-list">
-    {%- for post in site.pages -%}
-    {%- if post.categories -%}
-    {%- include post-list-item.html post=post -%}
+    {%- for page in site.pages -%}
+    {%- if page.show-on-home -%}
+    {%- include post-list-item.html post=page -%}
     {%- endif -%}
     {%- endfor -%}
   </ul>

@@ -1,6 +1,6 @@
 ---
 title: "VivoBook E203NAにWin10をクリーンインストールしたら快適になった話"
-categories: PC管理
+categories: パソコン
 update: 2021-08-12 00:00:00 +0900
 ---
 

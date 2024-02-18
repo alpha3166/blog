@@ -1,6 +1,6 @@
 ---
 title: "ASUS E210KAにWindows 11をクリーンインストールする"
-categories: PC管理
+categories: パソコン
 ---
 
 ## やりたいこと

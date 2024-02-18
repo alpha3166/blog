@@ -1,6 +1,6 @@
 ---
 title: "VimでEUC-JPやShift_JISのファイルを読めるようにする"
-categories: Unixで日本語
+categories: パソコン
 ---
 
 ロケールのコードセットをeucJPからUTF-8に変えたので、VimでEUC-JPやShift_JISのファイルを開くと文字化けするようになりました。

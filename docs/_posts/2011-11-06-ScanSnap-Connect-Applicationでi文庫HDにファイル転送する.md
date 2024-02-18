@@ -1,6 +1,6 @@
 ---
 title: "ScanSnap Connect Applicationでi文庫HDにファイル転送する"
-categories: 本
+categories: スマホ 電子書籍
 update: 2012-02-04 00:00:00 +0900
 ---
 
