@@ -37,9 +37,9 @@ categories: ことば 電子辞書
 - br / britannianenglannissa / British English / イギリス英語
 - ekol / ekologia / ecology / エコロジー
 - el / eläinlaji,eläintiede / species, zoology / 種、動物学
-- eläinlääk / eläinlääketiede / veterinary medicine / 獣医学
 - elektr / elektroniikka / electronics / エレクトロニクス
 - elok / elokuva / movie / ムービー
+- eläinlääk / eläinlääketiede / veterinary medicine / 獣医学
 - epämäär art / epämääräinen artikkeli / indefinite article / 不定冠詞
 - erit / erityisesti / especially / 特に
 - esim / esimerkiksi / for example / 例えば
@@ -111,8 +111,6 @@ categories: ことば 電子辞書
 - koul / koulutus / training / 訓練
 - ks / katso / behold / 注視する
 - kuv / kuvaannollinen, kuvaannollisesti / figurative, figuratively speaking, / 比喩、比喩的に言えば、
-- lääk / lääketiede / medicine / 医学
-- läh / lähivastine / local counterpart / 現地カウンターパート
 - lak / lakitiede / Law Science / 法科学
 - last / lastenkieli / children's language / 子どもの言語
 - lat / latinaa / Latin / ラテン
@@ -122,9 +120,10 @@ categories: ことば 電子辞書
 - liite / liite / attachment / アタッチメント
 - log / logiikka / logic / ロジック
 - lyh / lyhenne / abbreviation / 略称
+- läh / lähivastine / local counterpart / 現地カウンターパート
+- lääk / lääketiede / medicine / 医学
 - maanm / maanmittaus / surveying / 測量
 - maant / maantiede / geography / 地理
-- määr art / määräinen artikkeli / definite article / 定冠詞
 - maat / maatalous / Agriculture / 農業
 - mat / matematiikka / mathematics / 数学
 - mer / merenkulku / shipping / 出荷
@@ -135,6 +134,7 @@ categories: ことば 電子辞書
 - mon / monikkomuoto tai monikollinen käsite / or plural form of the plural term / 複数の用語の複数形または
 - mus / musiikki / music / 音楽
 - myt / mytologia / mythology / 神話
+- määr art / määräinen artikkeli / definite article / 定冠詞
 - n / negatiivinen ilmaus / negative expression / 負の発現
 - n / numeraali / numeral / 数字
 - num / numeraali / numeral / 数字
@@ -165,7 +165,6 @@ categories: ことば 電子辞書
 - run / runollinen / poetic / 詩的な
 - ruok / ruokatalous, -ala / food economy in the area / エリア内の食糧経済
 - s / substantiivi / noun / 名詞
-- sähk / sähköala / electricity / 電気
 - sb / somebody / somebody / 誰か
 - skotl / skotlanninenglannissa / Scottish in England / イギリスのスコットランド
 - sosiol / sosiologia / sociology / 社会学
@@ -173,8 +172,8 @@ categories: ことば 電子辞書
 - sth / something / something / 何か
 - suff / suffiksi / suffix / サフィックス
 - superl, superlat / superlatiivi / superlative / 最上級
+- sähk / sähköala / electricity / 電気
 - t. / tai / or / または
-- tähtit / tähtitiede / astronomy / 天文学
 - taide, taid / taide / art / 芸術
 - tal / talous / economy / 経済
 - teatt / teatteri / theater / 劇場
@@ -186,6 +185,7 @@ categories: ことば 電子辞書
 - tr / transitiivinen / transitive / 他動詞
 - tull / tullaus / customs / 税関
 - tv / tv / TV / テレビ
+- tähtit / tähtitiede / astronomy / 天文学
 - urh / urheilu / sports / スポーツの
 - usk / uskonto / religion / 宗教
 - v / verbi / verb / 動詞
