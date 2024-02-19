@@ -1,6 +1,7 @@
 ---
 title: "JavaScriptだけでtableのソートとフィルタを実装する"
 categories: ウェブ プログラミング
+update: 2024-02-19 00:00:00 +0900
 ---
 
 HTMLのtableのソートとフィルタの機能をJavaScriptだけで書いてみたら、思ってたより100億倍簡単だった。なんかいろいろ使いまわせそうなので、メモ。
@@ -9,9 +10,10 @@ HTMLのtableのソートとフィルタの機能をJavaScriptだけで書いて�
 
 - 列見出しを押したら、その列で昇順にソートする
 - 同じ列見出しをもう一回押したら、今度は降順にソートする
-- ソートしてる列見出しの末尾に「↓」(昇順)、「↑」(降順)のマークを付ける
+- ソートしてる列見出しの末尾に「🔼」(昇順)、「🔽」(降順)のマークを付ける
 - テキストボックスに入力した正規表現に合致する行だけをフィルタする
 - フィルタは、テキストボックスのEnterキーか、検索ボタン押下で発動させる
+- リセットボタンを押したらフィルタを解除する
 - 使うのはJavaScriptのみ (jQueryなど、他のライブラリは一切使わない)
 
 実際どんな動きになるかは、「[Software Design 2018.01～2024.03 総目次](resources/software-design-index.html)」を触って確かめてみてちょ。
@@ -64,11 +66,11 @@ function compareKeys(a, b) {
 
 ソートの骨格は以上。簡単ですな。
 
-ソート列の見出しに「↓」マークを付けるのは、CSSで「sort-ascクラスだったら末尾に↓を表示する」ようにしておき、
+ソート列の見出しに「🔼」マークを付けるのは、CSSで「sort-ascクラスだったら末尾に🔼を表示する」ようにしておき、
 
 ```css
 th.sort-asc::after {
-  content: '↓';
+  content: '🔼';
 }
 ```
 
@@ -124,11 +126,11 @@ function purgeSortMarker() {
 }
 ```
 
-降順のときthに設定しているCSSクラスのsort-descは、もちろん見出しに「↑」を付けるためのもの。
+降順のときthに設定しているCSSクラスのsort-descは、もちろん見出しに「🔽」を付けるためのもの。
 
 ```css
 th.sort-desc::after {
-  content: '↑';
+  content: '🔽';
 }
 ```
 
@@ -136,18 +138,22 @@ th.sort-desc::after {
 
 ## フィルタ処理
 
-tableタグの前に、inputタグをひとつと、buttonタグをひとつ、用意しておく。ここではJavaScriptで生成して挿入しているが(これは、JavaScriptオフの環境で表示されないようにするため。JS動かないのにボタンだけあっても意味ないからね…)、もちろんHTMLに直接inputタグとbuttonタグを書いてもOK。
+tableタグの前に、inputタグをひとつと、buttonタグをふたつ、用意しておく。ここではJavaScriptで生成して挿入しているが(これは、JavaScriptオフの環境で表示されないようにするため。JS動かないのにボタンだけあっても意味ないからね…)、もちろんHTMLに直接inputタグとbuttonタグを書いてもOK。
 
 ```javascript
-const body = document.querySelector('body');
 const table = document.querySelector('table');
+const tableParent = table.parentElement;
 
 const input = document.createElement('input');
-body.insertBefore(input, table);
+tableParent.insertBefore(input, table);
 
-const button = document.createElement('button');
-button.textContent = '正規表現で検索';
-body.insertBefore(button, table);
+const searchButton = document.createElement('button');
+searchButton.textContent = '正規表現で検索';
+tableParent.insertBefore(searchButton, table);
+
+const resetButton = document.createElement('button');
+resetButton.textContent = '全て表示';
+tableParent.insertBefore(resetButton, table);
 ```
 
 inputでEnterが押されたら、filterRows()が呼ばれるようにしておく。
@@ -158,10 +164,10 @@ input.addEventListener('keypress', () => {
 });
 ```
 
-buttonが押された時も、filterRows()が呼ばれるようにしておく。
+searchButtonが押された時も、filterRows()が呼ばれるようにしておく。
 
 ```javascript
-button.onclick = filterRows;
+searchButton.onclick = filterRows;
 ```
 
 filterRows()の中では、まずinputタグの入力を取り出して、正規表現オブジェクトを作成する。第2引数の'i'は、大文字と小文字を区別しない設定。
@@ -192,6 +198,21 @@ function filterRows() {
   }
 ```
 
+resetButtonは、押されたらresetFilter()が呼ばれるようにしておき、
+
+```javascript
+resetButton.onclick = resetFilter;
+```
+
+resetFilter()の中ではinputの中身をクリアしてfilterRows()を呼ぶ。
+
+```javascript
+function resetFilter() {
+  document.querySelector('input').value = '';
+  filterRows();
+}
+```
+
 これだけで、フィルタ処理も完成です。うーん、簡単!
 
 ## 最終形
@@ -217,10 +238,10 @@ function filterRows() {
         cursor: pointer;
       }
       th.sort-asc::after {
-        content: '↓';
+        content: '🔼';
       }
       th.sort-desc::after {
-        content: '↑';
+        content: '🔽';
       }
       td {
         padding: 0 0.3em;
@@ -243,19 +264,24 @@ function filterRows() {
       initialize();
 
       function initialize() {
-        const body = document.querySelector('body');
         const table = document.querySelector('table');
+        const tableParent = table.parentElement;
 
         const input = document.createElement('input');
         input.addEventListener('keypress', () => {
           if (event.key === 'Enter') filterRows();
         });
-        body.insertBefore(input, table);
+        tableParent.insertBefore(input, table);
 
-        const button = document.createElement('button');
-        button.textContent = '正規表現で検索';
-        button.onclick = filterRows;
-        body.insertBefore(button, table);
+        const searchButton = document.createElement('button');
+        searchButton.textContent = '正規表現で検索';
+        searchButton.onclick = filterRows;
+        tableParent.insertBefore(searchButton, table);
+
+        const resetButton = document.createElement('button');
+        resetButton.textContent = '全て表示';
+        resetButton.onclick = resetFilter;
+        tableParent.insertBefore(resetButton, table);
 
         document.querySelectorAll('th').forEach(th => th.onclick = sortRows);
         document.querySelector('th').classList.add('sort-asc');
@@ -275,6 +301,11 @@ function filterRows() {
             }
           }
         }
+      }
+
+      function resetFilter() {
+        document.querySelector('input').value = '';
+        filterRows();
       }
 
       function sortRows() {
@@ -322,3 +353,7 @@ function filterRows() {
   </body>
 </html>
 ```
+
+※更新履歴
+
+- 2024-02-19 ソート順の↓↑を🔼🔽に変更、フィルタのリセットボタンを追加、inputとbuttonのinsert先をtableの親elementに変更
