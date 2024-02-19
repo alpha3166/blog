@@ -9,7 +9,7 @@ show-on-home: true
 
 {% assign num = 0 %}
 
-#|号|目次順|タイトル|回|サブタイトル|著者
+\#|号|目次順|タイトル|回|サブタイトル|著者
 -|-|-|-|-|-|-
 {% for article in site.data.software-design-index -%}
 {%- assign num = num | plus: 1 -%}
