@@ -43,3 +43,9 @@
     </div>
   </div>
 </header>
+
+<script>
+  document.querySelector('.site-title a').onclick = () => {
+    localStorage.removeItem("selectedCategory");
+  }
+</script>
