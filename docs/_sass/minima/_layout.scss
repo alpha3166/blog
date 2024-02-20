@@ -144,6 +144,7 @@
   font-size: $small-font-size;
   text-align: center;
   border: 1px solid lighten($brand-color, 25%);
+  cursor: pointer;
 }
 
 .home {
@@ -165,11 +166,6 @@
       margin-top: 0.3em;
       margin-bottom: 0.3em;
     }
-  }
-
-  .post-category,
-  .post-list-filter-reset {
-    cursor: pointer;
   }
 }
 

@@ -58,3 +58,11 @@ layout: default
   {%- include disqus_comments.html -%}
   {%- endif -%}
 </article>
+
+<script>
+  function filter() {
+    localStorage.setItem("selectedCategory", this.textContent);
+    window.location.href = "{{ "/" | relative_url }}"
+  }
+  document.querySelectorAll('.post-category').forEach(span => span.onclick = filter);
+</script>

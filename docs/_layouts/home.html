@@ -35,16 +35,16 @@ layout: default
 </div>
 
 <script>
-  function applyFilter() {
+  function applyFilter(selectedCategory) {
     document.querySelectorAll('.post-category').forEach(span => {
-      if (span.textContent === this.textContent) {
+      if (span.textContent === selectedCategory) {
         span.classList.remove('post-category-hidden');
       } else {
         span.classList.add("post-category-hidden")
       }
     });
     document.querySelectorAll('.post-list>li').forEach(li => {
-      if (li.classList.contains(this.textContent)) {
+      if (li.classList.contains(selectedCategory)) {
         li.style.display = 'list-item';
       } else {
         li.style.display = 'none';
@@ -52,6 +52,7 @@ layout: default
     });
   }
   function resetFilter() {
+    localStorage.removeItem("selectedCategory");
     document.querySelectorAll('.post-category').forEach(span => {
       span.classList.remove("post-category-hidden")
     });
@@ -59,6 +60,16 @@ layout: default
       li.style.display = 'list-item';
     });
   }
-  document.querySelectorAll('.post-category').forEach(span => span.onclick = applyFilter);
+
+  const storedCategory = localStorage.getItem("selectedCategory");
+  if (storedCategory) {
+    applyFilter(storedCategory);
+  }
+
+  function filter() {
+    localStorage.setItem("selectedCategory", this.textContent);
+    applyFilter(this.textContent);
+  }
+  document.querySelectorAll('.post-category').forEach(span => span.onclick = filter);
   document.querySelector('.post-list-filter-reset').onclick = resetFilter;
 </script>
