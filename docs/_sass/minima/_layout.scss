@@ -102,6 +102,11 @@
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
+
+  table span {
+    text-wrap: nowrap;
+    white-space: nowrap;
+  }
 }
 
 .page-heading {
