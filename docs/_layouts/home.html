@@ -52,7 +52,7 @@ layout: default
     });
   }
   function resetFilter() {
-    localStorage.removeItem("selectedCategory");
+    sessionStorage.removeItem("selectedCategory");
     document.querySelectorAll('.post-category').forEach(span => {
       span.classList.remove("post-category-hidden")
     });
@@ -61,19 +61,19 @@ layout: default
     });
   }
 
-  const storedCategory = localStorage.getItem("selectedCategory");
+  const storedCategory = sessionStorage.getItem("selectedCategory");
   if (storedCategory) {
     applyFilter(storedCategory);
   }
 
   function filter() {
     if (this.parentElement.classList.contains("post-meta")) {
-      if (this.textContent !== localStorage.getItem("selectedCategory")) {
+      if (this.textContent !== sessionStorage.getItem("selectedCategory")) {
         window.scrollTo(0, 0);
       }
     }
 
-    localStorage.setItem("selectedCategory", this.textContent);
+    sessionStorage.setItem("selectedCategory", this.textContent);
     applyFilter(this.textContent);
   }
   document.querySelectorAll('.post-category').forEach(span => span.onclick = filter);

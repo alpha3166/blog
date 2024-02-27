@@ -45,7 +45,8 @@
 </header>
 
 <script>
+  localStorage.removeItem("selectedCategory");  // keep this for a while
   document.querySelector('.site-title a').onclick = () => {
-    localStorage.removeItem("selectedCategory");
+    sessionStorage.removeItem("selectedCategory");
   }
 </script>
