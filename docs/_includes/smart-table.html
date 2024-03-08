@@ -1,41 +1,41 @@
 <style>
   {%- if page.table contains "sortable" -%}
-  th.sort-asc::after {
-    content: '🔼';
-    font-size: 0.7em;
-    vertical-align: top;
-  }
+    th.sort-asc::after {
+      content: '🔼';
+      font-size: 0.7em;
+      vertical-align: top;
+    }
 
-  th.sort-desc::after {
-    content: '🔽';
-    font-size: 0.7em;
-    vertical-align: bottom;
-  }
+    th.sort-desc::after {
+      content: '🔽';
+      font-size: 0.7em;
+      vertical-align: bottom;
+    }
   {%- endif -%}
 
   {%- if page.table contains "searchable" -%}
-  button {
-    margin: 0 0 1em 0.5em;
-  }
+    button {
+      margin: 0 0 1em 0.5em;
+    }
   {%- endif -%}
 
   {%- if page.table contains "nowrap" -%}
-  th,
-  td {
-    text-wrap: nowrap;
-    white-space: nowrap;
-  }
+    th,
+    td {
+      text-wrap: nowrap;
+      white-space: nowrap;
+    }
   {%- endif -%}
 
   {%- if page.table contains "wide" -%}
-  .wrapper {
-    max-width: initial;
-    margin-right: 15px;
-  }
+    .wrapper {
+      max-width: initial;
+      margin-right: 15px;
+    }
 
-  table {
-    width: initial;
-  }
+    table {
+      width: initial;
+    }
   {%- endif -%}
 </style>
 
@@ -77,15 +77,15 @@
   }
 
   function compareKeys(a, b) {
-    if (a.key < b.key) return -1;
-    if (a.key > b.key) return 1;
-    return 0;
+    const a_mod = a.key.replace(/(\d)+/g, m => m.padStart(10, '0'));
+    const b_mod = b.key.replace(/(\d)+/g, m => m.padStart(10, '0'));
+    return a_mod < b_mod ? -1 : a_mod > b_mod ? 1 : 0;
   }
 
   function compareKeysReverse(a, b) {
-    if (a.key < b.key) return 1;
-    if (a.key > b.key) return -1;
-    return 0;
+    const a_mod = a.key.replace(/(\d)+/g, m => m.padStart(10, '0'));
+    const b_mod = b.key.replace(/(\d)+/g, m => m.padStart(10, '0'));
+    return a_mod < b_mod ? 1 : a_mod > b_mod ? -1 : 0;
   }
   {%- endif -%}
 
