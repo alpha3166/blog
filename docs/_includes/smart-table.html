@@ -1,5 +1,8 @@
 <style>
   {%- if page.table contains "sortable" -%}
+    th {
+      cursor: pointer;
+    }
     th.sort-asc::after {
       content: '🔼';
       font-size: 0.7em;
