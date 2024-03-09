@@ -10,10 +10,8 @@ show-on-home: true
 {% assign num = 0 %}
 
 \#|号|目次順|タイトル|回|サブタイトル|著者
--|-|-|-|-|-|-
+-:|-|-:|-|-|-|-
 {% for article in site.data.software-design-index -%}
 {%- assign num = num | plus: 1 -%}
-{%- capture display_num %}000{{ num }}{% endcapture -%}
-{%- assign display_num = display_num | slice: -4, 4 -%}
-{{ display_num }}|<span>{{ article.volume }}</span>|{{ article.order }}|{{ article.title }}|{{ article.num }}|{{ article.subtitle }}|{{ article.author }}
+{{ num }}|<span>{{ article.volume }}</span>|{{ article.order }}|{{ article.title }}|{{ article.num }}|{{ article.subtitle }}|{{ article.author }}
 {% endfor %}
