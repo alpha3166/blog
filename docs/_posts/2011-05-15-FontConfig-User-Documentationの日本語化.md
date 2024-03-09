@@ -4,7 +4,7 @@ categories: パソコン
 update: 2024-02-17 00:00:00 +0900
 ---
 
-FontConfigのドキュメント [FontConfig User Documentation](http://fontconfig.org/fontconfig-user.html) (man fonts-confで表示されるのと同じもの) を読むついでに日本語化してみました。かなーり適当に訳しているので、日本語化した内容については一切保証しません。
+FontConfigのドキュメント [FontConfig User Documentation](https://www.freedesktop.org/software/fontconfig/fontconfig-user.html) (man fonts-confで表示されるのと同じもの) を読むついでに日本語化してみました。かなーり適当に訳しているので、日本語化した内容については一切保証しません。
 
 ---
 

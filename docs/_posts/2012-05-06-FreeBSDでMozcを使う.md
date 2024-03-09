@@ -9,7 +9,7 @@ FreeBSD機で とあるスクリプトを編集していた時のこと。コメ
 
 まずホームディレクトリを空っぽのディレクトリに変えて、なんの設定もない状態から、前に書いた手順をそのまま繰り返してみたものの、症状は変わらず。次にja-ibus-anthy(japanese/ibus-anthy)をインストールして、インプットメソッドをMozcからAnthyに切り替えてみると、こちらはうまくかな漢字変換できるので、IBusの問題ではなさそう。じゃあ一回Mozcを強制リビルドしてみるかってことで、ja-ibus-mozc(japanese/ibus-mozc)とその依存パッケージを全部ビルドし直してみたけど、症状は変わらず。依存パッケージ150個のビルドに2時間もかかったのに……。
 
-ここでようやくGoogle検索することを思いつき(アホ?)、"freebsd mozc"とかで検索してみると、[後藤大地さんのFreeBSD Daily Topics](http://gihyo.jp/admin/clip/01/fdt/201112/05)で、最近のMozcには「手書き文字認識機能」や「文字パレット」なんかが追加されてるってことを知りました。へえー、これは便利そう。ぜひ使いたい。でもこれ、どっからどうやって起動するんだ? 試しにコマンドラインからmozcと打って補完させてみると、こんなのが出てきました。
+ここでようやくGoogle検索することを思いつき(アホ?)、"freebsd mozc"とかで検索してみると、[後藤大地さんのFreeBSD Daily Topics](https://gihyo.jp/admin/clip/01/fdt/201112/05)で、最近のMozcには「手書き文字認識機能」や「文字パレット」なんかが追加されてるってことを知りました。へえー、これは便利そう。ぜひ使いたい。でもこれ、どっからどうやって起動するんだ? 試しにコマンドラインからmozcと打って補完させてみると、こんなのが出てきました。
 
 ```console
 $ mozc【タブ】
@@ -27,7 +27,7 @@ mozc_tool_word_register
 
 おお、きっとこのmozc_toolなんちゃらが追加されたツール群に違いない。やや、その前のmozc_serverって何だ? Mozcにサーバなんてあるんだっけ? こんなの起動した覚えないぞ。これは臭い、プンプン臭うぞー!!
 
-というわけで、ずいぶん回り道をしてmozc_serverにたどり着きました。改めて[FreshPorts](http://www.freshports.org/japanese/ibus-mozc/)とかでコミット履歴を見てみると、2010年5月29日のログに「ibus-daemonを起動する前にmozc_server_startコマンドでmozc_serverを上げないとダメよ」と書かれてるではないですか。で、pkg-messageをよく読めと書かれてるので読んでみると……、
+というわけで、ずいぶん回り道をしてmozc_serverにたどり着きました。改めて[FreshPorts](https://www.freshports.org/japanese/ibus-mozc/)とかでコミット履歴を見てみると、2010年5月29日のログに「ibus-daemonを起動する前にmozc_server_startコマンドでmozc_serverを上げないとダメよ」と書かれてるではないですか。で、pkg-messageをよく読めと書かれてるので読んでみると……、
 
 ```console
 $ pkg_info -D ja-ibus-mozc\*

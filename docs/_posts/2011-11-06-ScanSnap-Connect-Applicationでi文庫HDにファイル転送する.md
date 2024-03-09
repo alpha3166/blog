@@ -12,7 +12,7 @@ i文庫HD自体は、アプリがFTPサーバとなってファイル転送で�
 
 そんな折り、ScanSnapの新モデルとともに登場した「ScanSnap Connect Application」を使えば簡単にファイル転送できるという話をきいたので、少し試してみました。結論を先に言うと、確かに安定的にWi-Fi経由でファイルを送ることができ、今後はこれメインで行こうという気になりました。
 
-具体的な手順ですが、まずPCで、[ScanSnapのダウンロードページ](http://scansnap.fujitsu.com/jp/downloads/)からScanSnap OrganizerとScanSnap Managerのアップデータをダウンロードし、適用します。すると、スタートメニューの「ScanSnap Manager」の中に「モバイルに保存」というアプリケーションが追加されます。これを起動すると、iPhone/iPadから接続するときのパスワード設定を求められるので、任意のパスワードを入力します。もちろん、パスワードはあとからでも変更可能です。
+具体的な手順ですが、まずPCで、[ScanSnapのダウンロードページ](https://web.archive.org/web/20120222153705/http://scansnap.fujitsu.com/jp/downloads/)からScanSnap OrganizerとScanSnap Managerのアップデータをダウンロードし、適用します。すると、スタートメニューの「ScanSnap Manager」の中に「モバイルに保存」というアプリケーションが追加されます。これを起動すると、iPhone/iPadから接続するときのパスワード設定を求められるので、任意のパスワードを入力します。もちろん、パスワードはあとからでも変更可能です。
 
 次に、iPhone/iPadのApp StoreからScanSnap Connect Applicationをインストールします。アプリを起動すると、自動的に「モバイルに保存」を立ち上げたPCを見つけ出して接続してくれます。そのとき、パスワードを聞かれるので、さきほどPC側で設定したのと同じ文字列を打ち込みます。これだけで、接続は完了です。
 

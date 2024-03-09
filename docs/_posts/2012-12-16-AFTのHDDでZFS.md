@@ -7,7 +7,7 @@ categories: パソコン
 
 3TBのHDDを2個つないでミラーリングし、古いHDDからデータを移し始めたんですが、どうにも遅い。10MiB/sぐらいしか出てない感じです。4～5年前のポンコツ機だし、ZFSだと多少は遅くなる覚悟はしてたけど、さすがにこれは遅すぎ。なので一旦コピーは中断して、ちょっと原因を探ってみることにしました。
 
-今回買ったHDDは[Western DigitalのWD30EZRX](http://www.wdc.com/global/products/specs/?driveID=927&language=6)で、物理セクタは4KiBですが、OSに対しては512Bセクタであるかのように振る舞うタイプ、いわゆるAFT(Advanced Format Technology)を採用したモデルです。
+今回買ったHDDは[Western DigitalのWD30EZRX](https://web.archive.org/web/20150426081801/http://www.wdc.com/global/products/specs/?driveID=927&language=6)で、物理セクタは4KiBですが、OSに対しては512Bセクタであるかのように振る舞うタイプ、いわゆるAFT(Advanced Format Technology)を採用したモデルです。
 
 このタイプはパーティション境界が4KiBでないと性能が落ちるので、
 
