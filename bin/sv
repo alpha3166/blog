@@ -1,0 +1,33 @@
+#!/bin/bash -e
+
+clean() {
+  (cd docs && rm -fr _site Gemfile.lock .jekyll-metadata)
+}
+
+up() {
+  (cd docker/blog-dev && docker compose up -d)
+}
+
+logs() {
+  docker logs -n 100 -f blog-dev-ws-1
+}
+
+down() {
+  (cd docker/blog-dev && docker compose down)
+}
+
+build() {
+  (cd docker/blog-dev && docker compose build --no-cache)
+}
+
+base_dir=$(cd $(dirname ${BASH_SOURCE:-$0})/.. && pwd)
+cd $base_dir
+
+if [[ ! -e "docs/index.md" ]]; then
+  echo "wrong dir!" >&2
+  exit 1
+fi
+
+for word in $*; do
+  $word
+done
