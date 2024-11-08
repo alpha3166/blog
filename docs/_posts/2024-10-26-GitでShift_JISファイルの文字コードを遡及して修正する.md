@@ -398,7 +398,7 @@ index c408b52..6b89e43 100644
 ```shell
 git switch master
 git branch old-master
-GIT_SEQUENCE_EDITOR="sed -i s/^picck/edit/" git rebase -i --root -Xtheirs -Xrenormalize
+GIT_SEQUENCE_EDITOR="sed -i s/^pick/edit/" git rebase -i --root -Xtheirs -Xrenormalize
 
 echo '*.bat text working-tree-encoding=cp932 eol=crlf' > .gitattributes
 git add .
