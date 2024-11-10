@@ -1,33 +1,31 @@
 ---
 title: "GitでShift_JISファイルの文字コードを遡及して修正する"
 categories: プログラミング
-update: 2024-11-02 00:00:00 +0900
+update: 2024-11-10 00:00:00 +0900
 ---
 
 ## .gitattributesでエンコーディングの変換を指示する
 
-テキストファイルのエンコーディングはUTF-8が当たり前となって久しいが、Windowsを使っていると、未だにShift_JISにしなければならないことがある (正確にはCP932、あるいはWindows-31Jにしなければならないと言うべきか)。バッチファイル (bat) や、ExcelのVBAマクロをエクスポートしたファイルなど (bas、cls、fmt) がそれだ。
+テキストファイルのエンコーディングはUTF-8が当たり前となって久しいが、Windowsを使っていると、未だにCP932 (Shift_JISをマイクロソフトが独自に拡張したエンコーディング、別名Windows-31J) にしなければならないことがある。バッチファイル (bat) や、ExcelのVBAマクロをエクスポートしたファイルなど (bas、cls、frm) がそれだ。
 
-GitでShift_JISのテキストファイルを管理するとき、何も設定しないと、リポジトリ内部のファイルもShift_JISになってしまう。その状態でもバージョン管理は可能だが、素の`git show`や`git diff`では日本語が16進数表示になってしまう。もちろん、`.gitattributes`でdiffにiconvを噛ませるとか、TortoiseGitにエンコーディングを推測させるなどの手もあるが、やはりリポ内のテキストファイルはすべてUTF-8に統一されている方が扱いやすい。
+GitでCP932のテキストファイルを管理するとき、何も設定しないとリポジトリ内部にもCP932で格納されてしまう。その状態でもバージョン管理は可能だが、素の`git show`や`git diff`では日本語が16進数表示になってしまう。もちろん、`.gitattributes`でdiffにiconvを噛ませるとか、TortoiseGitにエンコーディングを推測させるなどの手もあるが、やはりリポ内のテキストファイルはすべてUTF-8に統一されている方が扱いやすい。
 
-そこで、自分は`.gitattributes`で特定の拡張子の`working-tree-encoding`をcp932に指定しておくことが多い (正確には拡張子だけでなく`.gitignore`と同じようにパスのパターンを指定できる)。たとえばこのように。
+そこで自分は、`.gitattributes`で特定の拡張子の`working-tree-encoding`を`cp932`に指定している。たとえばこのように。
 
 ```plaintext
-* text=auto
 *.bat text working-tree-encoding=cp932 eol=crlf
-*.ps1 text working-tree-encoding=cp932 eol=crlf
 *.bas text working-tree-encoding=cp932 eol=crlf
 *.cls text working-tree-encoding=cp932 eol=crlf
 *.frm text working-tree-encoding=cp932 eol=crlf
 ```
 
-1行目の`* text=auto`は「どれがテキストファイルかの判断はGitにお任せする」という指定だ。そして、Gitがテキストファイルだと判断したものは、コミット時に改行コードがLFに自動変換されたうえで、リポジトリに格納される。この設定は、configの`core.autocrlf`よりも強い。そのため、使う人の設定に依存しない統一的な指定ができる。`.gitattributes`の指定は「あと勝ち」なので、この指定がデフォルトとなり (`*`で全パスに適用される)、その下に個別指定を書いていく。
+`.gitattributes`の1列目には、`.gitignore`と同じ文法で、設定を適用する対象のパスを指定する。
 
-2行目以降の`text`は「この拡張子はテキストファイルで、改行コードやエンコーディングの変換を行う対象である」ことを明示している。
+2列目の`text`は、1列目のパスに該当するものがテキストファイルであり、3列目以降の設定を適用することを宣言している。
 
-`eol=crlf`は、チェックアウト時に改行コードをCRLFに変換し、コミット時にLFに変換することを指定している。
+3列目の`working-tree-encoding=cp932`は、チェックイン時 (つまり`git add`でファイルがインデックスに追加されるとき) にエンコーディングをCP932からUTF-8に変換し、チェックアウト時にUTF-8からCP932に変換するよう指示している。つまり、`working-tree-encoding=なんとか`を指定すると、リポジトリ内のファイルのエンコーディングはUTF-8になる。よって、`git show`や`git diff`でも日本語が表示されるようになる。
 
-そして`working-tree-encoding=cp932`は、チェックアウト時にエンコーディングをUTF-8からCP932に変換し、コミット時にCP932からUTF-8に変換することを指定している。つまり、`working-tree-encoding=なんとか`を指定すると、リポジトリ内のファイルのエンコーディングはUTF-8になる。よって、`git show`や`git diff`でも日本語が表示されるようになる。
+4列目の`eol=crlf`は、チェックイン時に改行コードがCR+LFだったらLFに変換し (最初からLFならそのまま)、チェックアウト時にLFからCR+LFに変換するよう指示している。この指示は、Gitプロパティの`core.eol`や`core.autocrlf`よりも強い。そのため、使う人の設定やOSに依存しない統一的な指定ができる。WindowsのバッチファイルはCR+LFでないと動かないし、Unix系のシェルスクリプトはLFでないと悲惨な事故が起こったりするので、強制的に変換する設定はアリだろう。
 
 と、ここまでは、ちょっと検索するとあちこちに書かれている話だ。
 
@@ -41,7 +39,7 @@ GitでShift_JISのテキストファイルを管理するとき、何も設定�
 
 ■問題点1: **触っていないファイルまで変更があったと認識される**
 
-`.gitattributes`に`working-tree-encoding=cp932`を書いて保存した瞬間、その拡張子のファイルはすべて「リポ内ではUTF-8**のはず**のファイル」になる。しかし、実際にはリポ内のファイルはまだCP932のままだ。この状態で`git diff`を取ると、「リポ内の、実際はCP932なのにGitがUTF-8だと思い込んでいるファイル」と、「ワーキングディレクトリの、CP932からUTF-8に変換したファイル」の比較が行われるため、当然両者は不一致となる。その結果、実際には触っていなくても、その拡張子の全ファイルがワーキングディレクトリで修正ありとみなされてしまう。
+`.gitattributes`に`working-tree-encoding=cp932`を書いて保存した瞬間、その拡張子のファイルはすべて「リポ内ではUTF-8**のはず**のファイル」になる。しかし、実際にはリポ内のファイルはまだCP932のままだ。この状態で`git diff`を取ると、「リポ内の、GitがUTF-8だと思い込んでいるファイル (実際はCP932)」と、「ワーキングディレクトリの、CP932からUTF-8に変換したファイル」の比較が行われるため、当然両者は不一致となる。その結果、実際には触っていなくても、その拡張子の全ファイルがワーキングディレクトリで修正ありとみなされてしまう。
 
 ■問題点2: **予期せぬ変更が紛れ込んでいても気付かない**
 
@@ -53,7 +51,7 @@ GitでShift_JISのテキストファイルを管理するとき、何も設定�
 
 ■問題点4: **過去のコミット内容は16進数表示のまま**
 
-断絶前のコミットは、リポジトリ内部ではCP932のままなので、相変わらず`git show`や`git diff`で日本語が16進数表示になってしまう。
+断絶前のコミットは、リポ内部ではCP932のままなので、相変わらず`git show`や`git diff`で日本語が16進数表示になってしまう。
 
 ## 遡及修正する方法
 
@@ -71,8 +69,8 @@ GitでShift_JISのテキストファイルを管理するとき、何も設定�
 1. ブランチをバックアップする  
    例: `git branch old-master`
 
-1. 最初のコミットから、`-Xtheirs`と`-Xrenormalize`を付けて対話的リベースする  
-   例: `git rebase -i --root -Xtheirs -Xrenormalize`
+1. 最初のコミットから、`-Xrenormalize`を付けて対話的リベースする  
+   例: `git rebase -i --root -Xrenormalize`
 
 1. 最初から最後までの全コミットで停止して編集すると宣言する  
    例: `:%s/^pick/edit/` (viの場合)
@@ -83,13 +81,13 @@ GitでShift_JISのテキストファイルを管理するとき、何も設定�
 1. `.gitattributes`を`git add`する  
    例: `git add .`
 
-1. `--renormalize`オプションを付けて、全ファイルを`git add`する  
-   例: `git add --renormalize .`
+1. 全ファイルを`git add`する  
+   例: `git add .`
 
 1. 修正コミットする  
    例: `git commit --amend --no-edit`
 
-1. `git show`で差分を確認し、問題があれば補正して修正コミットする  
+1. `git show`で差分を確認し、問題があれば補正して、問題が無くなるまで上の2つを繰り返す  
    例: `git show`
 
 1. 次のコミットに移る  
@@ -106,52 +104,46 @@ GitでShift_JISのテキストファイルを管理するとき、何も設定�
 
 遡及修正がうまくいったように見えても、作業中には気付かなかった問題が残っているかもしれない。元はどうなってたんだっけ、とか、改めてイチから遡及修正しなおそう、ということが必ずあるので、修正前の履歴 (コミット) もずっと残しておくのが安全だ。
 
-ブランチをバックアップするといっても、Gitのブランチは特定のコミットを指すポインタに過ぎないので、手順としては`git branch 新ブランチ名 元のブランチ名`で新たにポインタを作るだけだ。
+ブランチをバックアップするといっても、Gitのブランチは特定のコミットを指すポインタに過ぎないので、手順としては`git branch 新ブランチ名 元のブランチ名`で新たにポインタを作るだけだ。`元のブランチ名`を省略した場合は、現在チェックアウトしているブランチから新ブランチを派生させるという意味になる。
 
 ### 最初のコミットからリベースする
 
 `git rebase`の引数には、リベースを始めるコミット**の親**を指定する必要がある。今回はいちばん最初のコミットから修正したいので、その親を指定したいが、何せいちばん最初のコミットなので親がいない。そういうときは、`--root`を付けると「ほんとに最初の何もないところから始める」を指定したことになる。
 
-### -Xtheirsをつけてリベースする
-
-リベース中の各コミットでは、CP932のファイルがあると、基本的にすべてコンフリクトが発生する。なぜなら、
-
-- リポ内ではひとつ前のコミットのファイルがすでにUTF-8に置き換わっているので、「前はUTF-8だったファイルを、このコミットでCP932に変えた」という変更が加わっているように見える
-- ワーキングディレクトリにあるのは「チェックアウト時に (実際はCP932のままなのに) UTF-8だと思ってCP932に変換しようとしてエラーになり、仕方なくバイナリファイルがそのまま (つまりCP932のまま) チェックアウトされた」もので、コミット時にはそれがUTF-8に変換されるので、「前はCP932だったファイルを、このコミットでUTF-8に変えた」という変更が加わっているように見える
-
-ということで、要はお互いが逆方向の変換をしようとしていると解釈され、コンフリクトが発生するのだ。その結果Gitは、リベースの相手版と自分版を両方取り込んでコンフリクトマーカーをつけたファイルを生成する。なので、そのままではいちいち手動で各ファイルを開いてコンフリクトを解消する必要が出てくる。
-
-`git rebase`に`-Xtheirs`を付けておくと、自動的に自分版を採用したファイルを作ってくれるので、すでにコンフリクトは解消した状態となり、大幅に手間が省ける。なお、「自分版なら-Xtheirsじゃなくて-Xoursじゃないの?」と思われた方は大変マトモな感性をお持ちだが、リベースは内部的にはいったんリベース相手のブランチにスイッチするような動きをするので、マージのときとはtheirsとoursが逆になる。よってここは「-Xours」ではなく「-Xtheirs」を指定する。
-
 ### -Xrenormalizeを付けてリベースする
 
-CP932のファイルを削除したコミットがある場合、リベースで「CONFLICT (modify/delete)」が発生し、そのコミットをリプレイするのに失敗する。つまり、そのコミットは未実施の状態になる。さらに、削除したはずのファイルはワーキングディレクトリに残ったままになる。
+リベース中の各コミットでは、CP932のファイルがあると、基本的にすべて「CONFLICT (content)」が発生し、そのコミットをリプレイするのに失敗する。なぜなら、
 
-そのため、削除したはずのファイルを手動で削除したうえで、`--amend`を付けない`git commit`をして、コミットメッセージも入力しなおす必要がある。
+- この時点でワーキングディレクトリのファイルの中身はCP932だが、`working-tree-encoding=cp932`の効力で、GitにはUTF-8に変換した姿として見えている。
+- これからリプレイしようとしているコミットは、元のブランチ (中身はCP932) におけるコミットの差分なので、CP932のテキストをCP932のテキストに書き換えるパッチに相当する。
 
-また、異常に気付かず全体を`git add`して`git commit --amend --no-edit`してしまうと、**本来のコミットがひとつ前のコミットに統合されてしまい**、かつ**削除したはずのファイルが残ったままになる**。
+という状況なので、「GitにはUTF-8に見えているワーキングディレクトリのファイル」に「CP932で書かれたパッチ」を適用しようとしても、適用先の行が見つかるはずもない。その結果的Gitは、ファイルの中身全体がコンフリクトしたと判断し、「リベースの相手版」(ワーキングディレクトリのファイルをUTF-8に変換した版) と「自分版」(元のブランチのCP932版) を両方取り込んで、コンフリクトマーカーをつけたファイルを生成する。
 
-`git rebase`に`-Xrenormalize`を付けておくと、CP932のファイルを削除したコミットでもリプレイが失敗することが無くなる。なぜ、CP932のファイルを削除したコミットで「CONFLICT (modify/delete)」が発生し、なぜ`-Xrenormalize`を付けるとそれが回避できるのかは、理由を調べ切れていない。すまぬ。
+また、CP932のファイルを削除したコミットがある場合は「CONFLICT (modify/delete)」が発生し、削除したはずのファイルはワーキングディレクトリに残ったままになる。
 
-### 全コミットで停止して編集する
+コンフリクトによりコミットのリプレイが失敗した結果、そのコミットは未実施の状態になる。そのため、毎回下記を行う必要がある。
 
-当初は、`.gitattributes`を追加する最初のコミットだけ`edit`にして、ほかは`pick`のままでよいだろうと思っていた。そのままでもどうせCP932ファイルの変換エラーで停止するし、と。
+- 「CONFLICT (content)」については、手動で各ファイルを開いて編集し、コンフリクトを解消する。
+- 「CONFLICT (modify/delete)」については、削除したはずのファイルを手動で削除する。
+- `--amend`を付けない`git commit`をして、コミットメッセージを入力しなおす。
 
-しかし実際には、たまたまCP932のファイルをいじっていないコミットが存在すると、そのコミットではエラーもコンフリクトも発生しないのでリベースは止まらない。また、変更のなかったCP932のファイルはリポ内でもCP932のままになる。よって、あとから履歴を見ると、そのコミットだけ一時的にファイルがCP932に戻っているように見える。
+`git rebase`に`-Xrenormalize`オプションを付けておくと、元のブランチのコミット差分を取る際にも、各コミットに同じ`.gitattributes`の内容を適用して一度仮想的にチェックイン、チェックアウトした後の状態でパッチを作ってくれるので、UTF-8のパッチができあがる (たぶん)。その結果、上記のようなコンフリクトが発生することもなくなり、各`git rebase --continue`ごとに、自動的にパッチを適用してコミットまでされた状態で停止する。よって、手動でのコンフリクト解消や、コミット時にメッセージを入力しなおす手間が省ける。
 
-安全のためには、全コミットで`--normalize`を付けた`git add .` (後述) をするのが良いと思う。また、修正コミットしたあとは毎回`git show`で問題ないか確認するのが良い。そのためには、結局全コミットを`edit`にして停止させる必要がある。
+(なお、この記事の2024-11-02版では`git rebase`に`-Xtheirs`も付けていたが、`-Xrenormalize`を付けていればそもそもコンフリクトが発生しないため、`-Xtheirs`は付けない手順に変えた。また、各コミットで停止した後の`git add`にも`--renormalize`を付けていたが、こちらも`git rebase`に`-Xrenormalize`を付けていれば不要であったため、外した)
+
+### 全コミットで停止して「git add .」する
+
+当初は、`.gitattributes`を追加する最初のコミットだけ`edit`にして、ほかは`pick`のままでよいだろうと思っていた。しかし実際には、途中でCP932の新規ファイルがあるとそのファイルだけリポ内がCP932のままになるなどの問題が発生した。
+
+安全のためには、全コミットを`edit`で止めて、都度`git add .`をするのが良いと思う。また、修正コミットしたあとは毎回`git show`で問題ないか確認するのが良い。そのためには、結局全コミットを`edit`にして停止させる必要がある。
 
 なお、`git rebase -i`するときに、環境変数`GIT_SEQUENCE_EDITOR`に`sed -i s/^pick/edit/`を設定しておくと、edit todoファイルの編集時のエディタとしてsedが使われるので、手動で編集する必要がなくなる。
 
 ここまでを総合すると、結局リベースコマンドはこうするのが早そうだ。
 
 ```shell
-GIT_SEQUENCE_EDITOR="sed -i s/^pick/edit/" git rebase -i --root -Xtheirs -Xrenormalize
+GIT_SEQUENCE_EDITOR="sed -i s/^pick/edit/" git rebase -i --root -Xrenormalize
 ```
-
-### --renormalizeオプションを付けて、全ファイルをgit addする
-
-`git add`するときに`--renormalize`を付けると、ワーキングディレクトリのファイルを`.attributes`の設定に従って仮想的にコミットし、もういちどチェックアウトしなおしたような状態になる。よって、問答無用で`git add --renormalize .`すれば、修正のなかったCP932ファイルもコミット対象となる。
 
 ### --no-editをつけて修正コミットする
 
@@ -161,7 +153,7 @@ GIT_SEQUENCE_EDITOR="sed -i s/^pick/edit/" git rebase -i --root -Xtheirs -Xrenor
 
 この記事の初版ではもっと簡単な手順で行けると踏んでいたのだが、実践してみると、あちこちで結果が想定どおりになっていなかった。その後判明した注意ポイントは可能な限り上に書いたのだが、それでもまだ想定外の事象は発生するだろうと思う。それに、例えば特定期間のコミットにだけ特殊な拡張子でCP932ファイルが存在する場合などは、適宜`.attributes`の中身を増やしたり減らしたりしたい場合もある。
 
-それを考えると、結果的には全コミットでリベースを止めて、`git add --renormalize . && git commit --amend --no-edit`した後は、必ず`git show`で想定通りになっているか確認し、もし想定外のことがあれば補正してもう一度`git commit --amend --no-edit`し、完全に満足するまでそれを繰り返すのがむしろ時間の節約になりそうだ。
+それを考えると、結果的には全コミットでリベースを止めて、`git add . && git commit --amend --no-edit`した後は、必ず`git show`で想定通りになっているか確認し、もし想定外のことがあれば補正してもう一度`git add . && git commit --amend --no-edit`し、完全に満足するまでそれを繰り返すのがむしろ時間の節約になりそうだ。
 
 ### 元のブランチのコミットを指していたタグを調べ、手動で新コミットに向けなおす
 
@@ -224,12 +216,12 @@ $ git init test
 hint: Using 'master' as the name for the initial branch. This default branch name
 hint: is subject to change. To configure the initial branch name to use in all
 hint: of your new repositories, which will suppress this warning, call:
-hint: 
+hint:
 hint:   git config --global init.defaultBranch <name>
-hint: 
+hint:
 hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
 hint: 'development'. The just-created branch can be renamed via this command:
-hint: 
+hint:
 hint:   git branch -m <name>
 Initialized empty Git repository in /home/alpha/test/.git/
 $ cd test
@@ -239,7 +231,7 @@ $ echo あ > utf8.bash
 $ git add .
 warning: in the working copy of 'cp932.bat', CRLF will be replaced by LF the next time Git touches it
 $ git commit -m "1. cp932.batとutf8.bashを追加: あ"
-[master (root-commit) fc911da] 1. cp932.batとutf8.bashを追加: あ
+[master (root-commit) f43f68a] 1. cp932.batとutf8.bashを追加: あ
  2 files changed, 2 insertions(+)
  create mode 100644 cp932.bat
  create mode 100644 utf8.bash
@@ -248,24 +240,24 @@ $ echo い | iconv -t SJIS | sed -e 's/$/\r/' > cp932.bat
 $ git add .
 warning: in the working copy of 'cp932.bat', CRLF will be replaced by LF the next time Git touches it
 $ git commit -m "2. cp932.batの中身を変更: あ→い"
-[master 4145362] 2. cp932.batの中身を変更: あ→い
+[master 4dd76e3] 2. cp932.batの中身を変更: あ→い
  1 file changed, 1 insertion(+), 1 deletion(-)
 $ echo い > utf8.bash
 $ git add .
 $ git commit -m "3. utf8.bashの中身を変更: あ→い"
-[master 0795f75] 3. utf8.bashの中身を変更: あ→い
+[master 5100ec4] 3. utf8.bashの中身を変更: あ→い
  1 file changed, 1 insertion(+), 1 deletion(-)
 $ echo い | iconv -t SJIS | sed -e 's/$/\r/' > another-cp932.bat
 $ git add .
 warning: in the working copy of 'another-cp932.bat', CRLF will be replaced by LF the next time Git touches it
 $ git commit -m "4. another-cp932.batを追加: い"
-[master bcac287] 4. another-cp932.batを追加: い
+[master 2ce9a17] 4. another-cp932.batを追加: い
  1 file changed, 1 insertion(+)
  create mode 100644 another-cp932.bat
 $ git rm cp932.bat
 rm 'cp932.bat'
 $ git commit -m "5. cp932.batを削除: い"
-[master 90276d0] 5. cp932.batを削除: い
+[master ce6fc82] 5. cp932.batを削除: い
  1 file changed, 1 deletion(-)
  delete mode 100644 cp932.bat
 $ echo う | iconv -t SJIS | sed -e 's/$/\r/' > another-cp932.bat
@@ -273,7 +265,7 @@ $ echo う > utf8.bash
 $ git add .
 warning: in the working copy of 'another-cp932.bat', CRLF will be replaced by LF the next time Git touches it
 $ git commit -m "6. another-cp932.batとutf8.bashの中身を変更: い→う"
-[master 5f4f362] 6. another-cp932.batとutf8.bashの中身を変更: い→う
+[master 98e0997] 6. another-cp932.batとutf8.bashの中身を変更: い→う
  2 files changed, 2 insertions(+), 2 deletions(-)
 ```
 
@@ -290,16 +282,16 @@ for commit in $(git log --format=%H --reverse); do git show $commit; done
 
 ```console
 $ git log --oneline --graph
-* 5f4f362 (HEAD -> master) 6. another-cp932.batとutf8.bashの中身を変更: い→う
-* 90276d0 5. cp932.batを削除: い
-* bcac287 4. another-cp932.batを追加: い
-* 0795f75 3. utf8.bashの中身を変更: あ→い
-* 4145362 2. cp932.batの中身を変更: あ→い
-* fc911da (tag: v1.0.0) 1. cp932.batとutf8.bashを追加: あ
+* 98e0997 (HEAD -> master) 6. another-cp932.batとutf8.bashの中身を変更: い→う
+* ce6fc82 5. cp932.batを削除: い
+* 2ce9a17 4. another-cp932.batを追加: い
+* 5100ec4 3. utf8.bashの中身を変更: あ→い
+* 4dd76e3 2. cp932.batの中身を変更: あ→い
+* f43f68a (tag: v1.0.0) 1. cp932.batとutf8.bashを追加: あ
 $ for commit in $(git log --format=%H --reverse); do git show $commit; done
-commit fc911da96d857cba6d540d9d199fd80680fe19be (tag: v1.0.0)
+commit f43f68ad23a5d428a766106cda36506dacdb60bd (tag: v1.0.0)
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:23:48 2024 +0900
+Date:   Sun Nov 10 16:04:52 2024 +0900
 
     1. cp932.batとutf8.bashを追加: あ
 
@@ -317,9 +309,9 @@ index 0000000..f2435a2
 +++ b/utf8.bash
 @@ -0,0 +1 @@
 +あ
-commit 414536297bb39690cacade7cd3a87ba6b33f7708
+commit 4dd76e334d8af31574656dc3f2d7e25847ccc522
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:24:45 2024 +0900
+Date:   Sun Nov 10 16:05:15 2024 +0900
 
     2. cp932.batの中身を変更: あ→い
 
@@ -330,9 +322,9 @@ index 0d5dab3..59d08b3 100644
 @@ -1 +1 @@
 -<82><A0>
 +<82><A2>
-commit 0795f75b3390dcf70323b3c7d12570c54145169f
+commit 5100ec4a9ca2aaf574fe211abfc9816d654083e1
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:24:52 2024 +0900
+Date:   Sun Nov 10 16:05:22 2024 +0900
 
     3. utf8.bashの中身を変更: あ→い
 
@@ -343,9 +335,9 @@ index f2435a2..c408b52 100644
 @@ -1 +1 @@
 -あ
 +い
-commit bcac2873de54dc79d2a6d6960b1a8c60f8893e60
+commit 2ce9a170ff4456f4edbf1e8c7edfef5be7e1cf80
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:25:02 2024 +0900
+Date:   Sun Nov 10 16:05:28 2024 +0900
 
     4. another-cp932.batを追加: い
 
@@ -356,9 +348,9 @@ index 0000000..59d08b3
 +++ b/another-cp932.bat
 @@ -0,0 +1 @@
 +<82><A2>
-commit 90276d0955f84c7f62bba48adff335a370211948
+commit ce6fc82dea50ac8b00a23c97e54e39f13746d94e
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:25:07 2024 +0900
+Date:   Sun Nov 10 16:05:32 2024 +0900
 
     5. cp932.batを削除: い
 
@@ -369,9 +361,9 @@ index 59d08b3..0000000
 +++ /dev/null
 @@ -1 +0,0 @@
 -<82><A2>
-commit 5f4f3621acc88df94ec19fe663f41217b3607220 (HEAD -> master)
+commit 98e0997f64320e873b08dcd0741f95de67c0517c (HEAD -> master)
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:25:23 2024 +0900
+Date:   Sun Nov 10 16:05:43 2024 +0900
 
     6. another-cp932.batとutf8.bashの中身を変更: い→う
 
@@ -398,17 +390,17 @@ index c408b52..6b89e43 100644
 ```shell
 git switch master
 git branch old-master
-GIT_SEQUENCE_EDITOR="sed -i s/^pick/edit/" git rebase -i --root -Xtheirs -Xrenormalize
+GIT_SEQUENCE_EDITOR="sed -i s/^pick/edit/" git rebase -i --root -Xrenormalize
 
 echo '*.bat text working-tree-encoding=cp932 eol=crlf' > .gitattributes
 git add .
 
-git add --renormalize . && git commit --amend --no-edit && git rebase --continue
-git add --renormalize . && git commit --amend --no-edit && git rebase --continue
-git add --renormalize . && git commit --amend --no-edit && git rebase --continue
-git add --renormalize . && git commit --amend --no-edit && git rebase --continue
-git add --renormalize . && git commit --amend --no-edit && git rebase --continue
-git add --renormalize . && git commit --amend --no-edit && git rebase --continue
+git add . && git commit --amend --no-edit && git rebase --continue
+git add . && git commit --amend --no-edit && git rebase --continue
+git add . && git commit --amend --no-edit && git rebase --continue
+git add . && git commit --amend --no-edit && git rebase --continue
+git add . && git commit --amend --no-edit && git rebase --continue
+git add . && git commit --amend --no-edit && git rebase --continue
 
 git tag -f v1.0.0 $(git log --format=%H | tail -n 1)
 ```
@@ -419,11 +411,11 @@ git tag -f v1.0.0 $(git log --format=%H | tail -n 1)
 $ git switch master
 Already on 'master'
 $ git branch old-master
-$ GIT_SEQUENCE_EDITOR="sed -i s/^pick/edit/" git rebase -i --root -Xtheirs -Xrenormalize
-Stopped at fc911da...  1. cp932.batとutf8.bashを追加: あ
+$ GIT_SEQUENCE_EDITOR="sed -i s/^pick/edit/" git rebase -i --root -Xrenormalize
+Stopped at f43f68a...  1. cp932.batとutf8.bashを追加: あ
 You can amend the commit now, with
 
-  git commit --amend 
+  git commit --amend
 
 Once you are satisfied with your changes, run
 
@@ -431,85 +423,84 @@ Once you are satisfied with your changes, run
 $ echo '*.bat text working-tree-encoding=cp932 eol=crlf' > .gitattributes
 $ git add .
 warning: in the working copy of 'cp932.bat', LF will be replaced by CRLF the next time Git touches it
-$ git add --renormalize . && git commit --amend --no-edit && git rebase --continue
-[detached HEAD 46f8334] 1. cp932.batとutf8.bashを追加: あ
- Date: Sat Nov 2 09:23:48 2024 +0900
+$ git add . && git commit --amend --no-edit && git rebase --continue
+[detached HEAD eb40805] 1. cp932.batとutf8.bashを追加: あ
+ Date: Sun Nov 10 16:04:52 2024 +0900
  3 files changed, 3 insertions(+)
  create mode 100644 .gitattributes
  create mode 100644 cp932.bat
  create mode 100644 utf8.bash
 error: failed to encode 'cp932.bat' from UTF-8 to cp932
 error: failed to encode 'cp932.bat' from UTF-8 to cp932
-Stopped at 4145362...  2. cp932.batの中身を変更: あ→い
+Stopped at 4dd76e3...  2. cp932.batの中身を変更: あ→い
 You can amend the commit now, with
 
-  git commit --amend 
+  git commit --amend
 
 Once you are satisfied with your changes, run
 
   git rebase --continue
-$ git add --renormalize . && git commit --amend --no-edit && git rebase --continue
-[detached HEAD 085249e] 2. cp932.batの中身を変更: あ→い
- Date: Sat Nov 2 09:24:45 2024 +0900
+$ git add . && git commit --amend --no-edit && git rebase --continue
+[detached HEAD 85a04c5] 2. cp932.batの中身を変更: あ→い
+ Date: Sun Nov 10 16:05:15 2024 +0900
  1 file changed, 1 insertion(+), 1 deletion(-)
-Stopped at 0795f75...  3. utf8.bashの中身を変更: あ→い
+Stopped at 5100ec4...  3. utf8.bashの中身を変更: あ→い
 You can amend the commit now, with
 
-  git commit --amend 
+  git commit --amend
 
 Once you are satisfied with your changes, run
 
   git rebase --continue
-$ git add --renormalize . && git commit --amend --no-edit && git rebase --continue
-[detached HEAD 6f8806b] 3. utf8.bashの中身を変更: あ→い
- Date: Sat Nov 2 09:24:52 2024 +0900
+$ git add . && git commit --amend --no-edit && git rebase --continue
+[detached HEAD 43a8126] 3. utf8.bashの中身を変更: あ→い
+ Date: Sun Nov 10 16:05:22 2024 +0900
  1 file changed, 1 insertion(+), 1 deletion(-)
 error: failed to encode 'another-cp932.bat' from UTF-8 to cp932
-Stopped at bcac287...  4. another-cp932.batを追加: い
+Stopped at 2ce9a17...  4. another-cp932.batを追加: い
 You can amend the commit now, with
 
-  git commit --amend 
+  git commit --amend
 
 Once you are satisfied with your changes, run
 
   git rebase --continue
-$ git add --renormalize . && git commit --amend --no-edit && git rebase --continue
-[detached HEAD 72c4a5a] 4. another-cp932.batを追加: い
- Date: Sat Nov 2 09:25:02 2024 +0900
+$ git add . && git commit --amend --no-edit && git rebase --continue
+[detached HEAD 27b1eba] 4. another-cp932.batを追加: い
+ Date: Sun Nov 10 16:05:28 2024 +0900
  1 file changed, 1 insertion(+)
  create mode 100644 another-cp932.bat
 error: failed to encode 'cp932.bat' from UTF-8 to cp932
-Stopped at 90276d0...  5. cp932.batを削除: い
+Stopped at ce6fc82...  5. cp932.batを削除: い
 You can amend the commit now, with
 
-  git commit --amend 
+  git commit --amend
 
 Once you are satisfied with your changes, run
 
   git rebase --continue
-$ git add --renormalize . && git commit --amend --no-edit && git rebase --continue
-[detached HEAD 93ac467] 5. cp932.batを削除: い
- Date: Sat Nov 2 09:25:07 2024 +0900
+$ git add . && git commit --amend --no-edit && git rebase --continue
+[detached HEAD 558b22c] 5. cp932.batを削除: い
+ Date: Sun Nov 10 16:05:32 2024 +0900
  1 file changed, 1 deletion(-)
  delete mode 100644 cp932.bat
 error: failed to encode 'another-cp932.bat' from UTF-8 to cp932
 error: failed to encode 'another-cp932.bat' from UTF-8 to cp932
-Stopped at 5f4f362...  6. another-cp932.batとutf8.bashの中身を変更: い→う
+Stopped at 98e0997...  6. another-cp932.batとutf8.bashの中身を変更: い→う
 You can amend the commit now, with
 
-  git commit --amend 
+  git commit --amend
 
 Once you are satisfied with your changes, run
 
   git rebase --continue
-$ git add --renormalize . && git commit --amend --no-edit && git rebase --continue
-[detached HEAD dc0db16] 6. another-cp932.batとutf8.bashの中身を変更: い→う
- Date: Sat Nov 2 09:25:23 2024 +0900
+$ git add . && git commit --amend --no-edit && git rebase --continue
+[detached HEAD 8ce7329] 6. another-cp932.batとutf8.bashの中身を変更: い→う
+ Date: Sun Nov 10 16:05:43 2024 +0900
  2 files changed, 2 insertions(+), 2 deletions(-)
 Successfully rebased and updated refs/heads/master.
 $ git tag -f v1.0.0 $(git log --format=%H | tail -n 1)
-Updated tag 'v1.0.0' (was fc911da)
-$ 
+Updated tag 'v1.0.0' (was f43f68a)
 ```
 
 補正後の結果を確認する。
@@ -525,16 +516,16 @@ for commit in $(git log --format=%H --reverse); do git show $commit; done
 
 ```console
 $ git log --oneline --graph
-* dc0db16 (HEAD -> master) 6. another-cp932.batとutf8.bashの中身を変更: い→う
-* 93ac467 5. cp932.batを削除: い
-* 72c4a5a 4. another-cp932.batを追加: い
-* 6f8806b 3. utf8.bashの中身を変更: あ→い
-* 085249e 2. cp932.batの中身を変更: あ→い
-* 46f8334 (tag: v1.0.0) 1. cp932.batとutf8.bashを追加: あ
+* 8ce7329 (HEAD -> master) 6. another-cp932.batとutf8.bashの中身を変更: い→う
+* 558b22c 5. cp932.batを削除: い
+* 27b1eba 4. another-cp932.batを追加: い
+* 43a8126 3. utf8.bashの中身を変更: あ→い
+* 85a04c5 2. cp932.batの中身を変更: あ→い
+* eb40805 (tag: v1.0.0) 1. cp932.batとutf8.bashを追加: あ
 $ for commit in $(git log --format=%H --reverse); do git show $commit; done
-commit 46f8334debc85deb1f6a54351c798c3ab5440d3b (tag: v1.0.0)
+commit eb408056cf963a9a445c700ab90ece846525f2b7 (tag: v1.0.0)
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:23:48 2024 +0900
+Date:   Sun Nov 10 16:04:52 2024 +0900
 
     1. cp932.batとutf8.bashを追加: あ
 
@@ -559,9 +550,9 @@ index 0000000..f2435a2
 +++ b/utf8.bash
 @@ -0,0 +1 @@
 +あ
-commit 085249ef452dff4af000231e2a6f3cb815d5ab59
+commit 85a04c5c6ce18de21cabe0f288f6d25280c0b0d6
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:24:45 2024 +0900
+Date:   Sun Nov 10 16:05:15 2024 +0900
 
     2. cp932.batの中身を変更: あ→い
 
@@ -572,9 +563,9 @@ index f2435a2..c408b52 100644
 @@ -1 +1 @@
 -あ
 +い
-commit 6f8806befe4fa9ac027a996a473249037117c1dc
+commit 43a812621fc644ccf1cc68e6b962fa27cc3d8fc2
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:24:52 2024 +0900
+Date:   Sun Nov 10 16:05:22 2024 +0900
 
     3. utf8.bashの中身を変更: あ→い
 
@@ -585,9 +576,9 @@ index f2435a2..c408b52 100644
 @@ -1 +1 @@
 -あ
 +い
-commit 72c4a5a71670a5810f2c5f2b6e4b75dfd9fbcfe2
+commit 27b1eba5bed6636e1f0466282cd3bd80ea67463f
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:25:02 2024 +0900
+Date:   Sun Nov 10 16:05:28 2024 +0900
 
     4. another-cp932.batを追加: い
 
@@ -598,9 +589,9 @@ index 0000000..c408b52
 +++ b/another-cp932.bat
 @@ -0,0 +1 @@
 +い
-commit 93ac46748f0a0018061896f668df5562fe46bea2
+commit 558b22c985fd1a4a10f718ce8247530924b44db2
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:25:07 2024 +0900
+Date:   Sun Nov 10 16:05:32 2024 +0900
 
     5. cp932.batを削除: い
 
@@ -611,9 +602,9 @@ index c408b52..0000000
 +++ /dev/null
 @@ -1 +0,0 @@
 -い
-commit dc0db16f8a3c2970815ef41c062b0a373c8396e2 (HEAD -> master)
+commit 8ce7329c5923700fb327df583050c3fe49ff5c10 (HEAD -> master)
 Author: alpha3166 <alpha3166@example.com>
-Date:   Sat Nov 2 09:25:23 2024 +0900
+Date:   Sun Nov 10 16:05:43 2024 +0900
 
     6. another-cp932.batとutf8.bashの中身を変更: い→う
 
@@ -640,3 +631,4 @@ index c408b52..6b89e43 100644
 ※更新履歴
 
 - 2024-11-02 いろいろ考慮が足りてなかったため全面改稿。
+- 2024-11-10 まだいろいろ間違っていたり、不要な手順があったりしたため、再び全面改稿。
