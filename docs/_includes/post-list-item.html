@@ -1,8 +1,8 @@
 <li class="{%- for category in include.post.categories -%}{{ category }} {% endfor -%}">
   {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
   <span class="post-meta">{{ include.post.date | date: date_format }}
-    {%- if include.post.update %}
-    ({{ include.post.update | date: date_format }} 更新)
+    {%- if include.post.seo.date_modified %}
+    ({{ include.post.seo.date_modified | date: date_format }} 更新)
     {%- endif -%}
     {%- for category in include.post.categories -%}
     <span class="post-category">{{ category }}</span>

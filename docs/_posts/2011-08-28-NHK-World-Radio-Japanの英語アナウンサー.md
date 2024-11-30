@@ -1,7 +1,8 @@
 ---
 title: "NHK World Radio Japanの英語アナウンサー"
 categories: ことば
-update: 2015-06-27 00:00:00 +0900
+seo:
+  date_modified: 2015-06-27 00:00:00 +0900
 ---
 
 最近、iPhoneのPodcastでNHKの英語ニュース (NHK World Radio Japan) をわりとよく聴きます。耳ならしの意味ではBBCやCNNの方が良いのかもしれませんが、遠い国の話ばかりだと途中で飽きてしまうので、身近な話題が多いNHKは集中力が持続しやすい気がします。地域限定のイディオムや言い回しは避けているようなので、内容も理解しやすいです。

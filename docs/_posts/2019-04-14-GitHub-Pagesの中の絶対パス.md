@@ -1,7 +1,8 @@
 ---
 title: "GitHub Pagesの中の絶対パス"
 categories: ウェブ
-update: 2024-02-18 00:00:00 +0900
+seo:
+  date_modified: 2024-02-18 00:00:00 +0900
 series: github-pages
 ---
 

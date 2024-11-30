@@ -19,9 +19,9 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
-      {%- if page.update -%}
-      <time class="dt-published" datetime="{{ page.update | date_to_xmlschema }}" itemprop="dateUpdated">
-        ({{ page.update | date: date_format }} 更新)
+      {%- if page.seo.date_modified -%}
+      <time class="dt-published" datetime="{{ page.seo.date_modified | date_to_xmlschema }}" itemprop="dateModified">
+        ({{ page.seo.date_modified | date: date_format }} 更新)
       </time>
       {%- endif -%}
       {%- if page.author -%}
