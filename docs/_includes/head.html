@@ -2,6 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {%- seo -%}
+{%- if page.seo.date_modified -%}
+<meta property="article:modified_time" content="{{ page.seo.date_modified | date_to_xmlschema }}" />
+{%- endif -%}
 
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" sizes="480x480" href="/favicon.jpg" type="image/jpeg">
