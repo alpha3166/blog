@@ -3,6 +3,7 @@ title: "JavaScriptだけでtableのソートとフィルタを実装する"
 categories: ウェブ プログラミング
 seo:
   date_modified: 2024-02-19 00:00:00 +0900
+last_modified_at: 2024-02-19 00:00:00 +0900
 ---
 
 HTMLのtableのソートとフィルタの機能をJavaScriptだけで書いてみたら、思ってたより100億倍簡単だった。なんかいろいろ使いまわせそうなので、メモ。

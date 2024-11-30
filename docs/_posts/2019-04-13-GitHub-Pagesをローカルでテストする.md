@@ -3,6 +3,7 @@ title: "GitHub Pagesをローカルでテストする"
 categories: ウェブ
 seo:
   date_modified: 2020-06-11 00:00:00 +0900
+last_modified_at: 2020-06-11 00:00:00 +0900
 series: github-pages
 ---
 

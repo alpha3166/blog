@@ -3,6 +3,7 @@ title: "auのiPhone5をiPhone5sに機種変更する"
 categories: スマホ
 seo:
   date_modified: 2013-09-23 00:00:00 +0900
+last_modified_at: 2013-09-23 00:00:00 +0900
 ---
 
 今日、au(KDDI)のiPhone5をiPhone5sに機種変更してきたので、自分用にポイントをメモしておきます。

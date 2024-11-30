@@ -3,6 +3,7 @@ title: "Windows使いがiPhone/iPadでHHKB"
 categories: スマホ 文字
 seo:
   date_modified: 2024-09-15 00:00:00 +0900
+last_modified_at: 2024-09-15 00:00:00 +0900
 ---
 
 Windows使いがiPhoneやiPadにHHKB日本語配列をつないで使う場合、ちょっと設定を変えれば劇的に使いやすくなる。ということに今さら気づいたのだが、その設定をすぐに忘れてしまうのでメモ。

@@ -3,6 +3,7 @@ title: "ScanSnap Connect Applicationでi文庫HDにファイル転送する"
 categories: スマホ 電子書籍
 seo:
   date_modified: 2012-02-04 00:00:00 +0900
+last_modified_at: 2012-02-04 00:00:00 +0900
 ---
 
 2年ほど前にScanSnap S1500を購入し、紙の本をスキャンしてPDF化する いわゆる「自炊」を続けています。1ヶ月ほど前にiPad 2を購入したため、読書といえばもっぱらiPadで自炊PDFを読むスタイルになりました。iPadのPDFリーダーとしては、i文庫HDを使っています。

@@ -3,6 +3,7 @@ title: "VirtualBoxでFreeBSDを使ってみる"
 categories: パソコン
 seo:
   date_modified: 2012-12-22 00:00:00 +0900
+last_modified_at: 2012-12-22 00:00:00 +0900
 ---
 
 FreeBSDで構築しているファイルサーバにそろそろZFSを導入しようかなと思っているのですが、ZFSの経験値がゼロなので、作業に入る前にいろいろ試してみたい、ということで、Windows 7機に今流行りのVirtualBoxを入れて、そこでFreeBSDを動かしてみました。結論から言うと、これはとっても簡単・快適で、一度味をしめると病みつきになります(笑)。

@@ -3,6 +3,7 @@ title: "VivoBook E203NAにWin10をクリーンインストールしたら快適�
 categories: パソコン
 seo:
   date_modified: 2021-08-12 00:00:00 +0900
+last_modified_at: 2021-08-12 00:00:00 +0900
 ---
 
 ASUS VivoBook E203NAがあまりにも遅いので、思い切ってWindows 10(Fall Creators Update、Ver.1709)をクリーンインストールしたら、とても快適になった。そして、拍子抜けなほど手間もかからなかった。

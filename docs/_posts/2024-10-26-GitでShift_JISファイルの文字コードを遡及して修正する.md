@@ -3,6 +3,7 @@ title: "GitでShift_JISファイルの文字コードを遡及して修正する
 categories: プログラミング
 seo:
   date_modified: 2024-11-10 00:00:00 +0900
+last_modified_at: 2024-11-10 00:00:00 +0900
 ---
 
 ## .gitattributesでエンコーディングの変換を指示する
