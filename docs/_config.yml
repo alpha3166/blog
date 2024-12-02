@@ -19,3 +19,10 @@ defaults:
   values:
     layout: post
     permalink: /:year:month:day:output_ext
+- scope:
+    path: ""
+  values:
+    image: /img/alpha3166.jpg
+twitter:
+  username: alpha3166
+  card: summary
