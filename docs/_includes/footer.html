@@ -1,7 +1,14 @@
 <footer class="site-footer">
   <div class="wrapper">
     <div>
-      © {{ page.date | date: "%Y" }} {{ site.author | escape }}
+      {%- assign year = page.date | date: "%Y" -%}
+      {%- if page.seo.date_modified -%}
+        {%- assign modified_year = page.seo.date_modified | date: "%Y" -%}
+        {%- if modified_year != year -%}
+          {%- assign year = year | append: " - " | append: modified_year -%}
+        {%- endif -%}
+      {%- endif -%}
+      © {{ year }} {{ site.author | escape }}
     </div>
   </div>
 </footer>
