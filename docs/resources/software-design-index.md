@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Software Design 2018-01～2025-05 総目次"
+title: "Software Design 2018-01～2025-06 総目次"
 date: 2022-11-23 00:00:00 +0900
 seo:
-  date_modified: 2025-04-04 00:00:00 +0900
-last_modified_at: 2025-04-04 00:00:00 +0900
+  date_modified: 2025-05-10 00:00:00 +0900
+last_modified_at: 2025-05-10 00:00:00 +0900
 table: sortable searchable wide
 show-on-home: true
 ---
