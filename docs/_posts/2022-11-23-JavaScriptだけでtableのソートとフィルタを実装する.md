@@ -18,7 +18,7 @@ HTMLのtableのソートとフィルタの機能をJavaScriptだけで書いて�
 - リセットボタンを押したらフィルタを解除する
 - 使うのはJavaScriptのみ (jQueryなど、他のライブラリは一切使わない)
 
-実際どんな動きになるかは、「[Software Design 2018-01～2025-07 総目次](resources/software-design-index.html)」を触って確かめてみてちょ。
+実際どんな動きになるかは、「[Software Design 2018-01～2025-08 総目次](resources/software-design-index.html)」を触って確かめてみてちょ。
 
 ## ソート処理
 
