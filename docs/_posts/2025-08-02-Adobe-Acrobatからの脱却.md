@@ -1,6 +1,6 @@
 ---
 title: "Adobe Acrobatからの脱却"
-categories: パソコン
+categories: パソコン 電子書籍
 ---
 
 ## もうPCにAcrobatはインストールしない
