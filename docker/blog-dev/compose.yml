@@ -6,4 +6,3 @@ services:
       - 4000:4000
     volumes:
       - ../..:/srv/jekyll
-    user: "1002:1002"
