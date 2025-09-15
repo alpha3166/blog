@@ -1,6 +1,7 @@
 ---
 title: "Windows使いがiPhone/iPadでHHKB"
 categories: スマホ パソコン 文字
+series: hhkb
 seo:
   date_modified: 2025-09-15 00:00:00 +0900
 last_modified_at: 2025-09-15 00:00:00 +0900
