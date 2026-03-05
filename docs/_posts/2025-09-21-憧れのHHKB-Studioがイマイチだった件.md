@@ -2,6 +2,9 @@
 title: "憧れのHHKB Studioがイマイチだった件"
 categories: パソコン スマホ
 series: hhkb
+seo:
+  date_modified: 2026-03-05 00:00:00 +0900
+last_modified_at: 2026-03-05 00:00:00 +0900
 ---
 
 ## はじめに
@@ -113,6 +116,8 @@ HHKB Studioが発表されたとき、新機軸の数々に目を奪われ、い
 ## 【付録】HHKB Professional日本語配列のキーマップ
 
 ### 割り当て可能キー
+
+(2026年3月5日追記) 本日、PFUからHHKB Professionalキーマップ変更ツール2.0.0が公開され、割り当て可能キーが大幅に拡充された。詳しくは、PFUの[「HHKB Professional キーマップ変更ツール」機能追加によるバージョンアップのお知らせ](https://happyhackingkb.com/jp/news/2026/news20260305.html)を参照してほしい。下記の情報は、旧版となる1.3.1のものである。
 
 ![img](resources/hhkb/hhkb-pro-all-keys.png)
 
