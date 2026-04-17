@@ -88,6 +88,20 @@
 /**
  * Site footer
  */
+.ofuse {
+  text-align: center;
+}
+
+.ofuse a {
+  display: inline-block;
+  color: white;
+  background: lighten($brand-color, 15%);
+  border-radius: $spacing-unit;
+  padding: $spacing-unit * 0.2 $spacing-unit;
+  font-weight: bold;
+  margin-bottom: $spacing-unit;
+}
+
 .site-footer {
   text-align: center;
   color: $grey-color;
