@@ -1,0 +1,11 @@
+name: blog
+services:
+  web:
+    build: .
+    image: blog
+    ports:
+      - 4000:4000
+    volumes:
+      - ..:/srv/jekyll
+    environment:
+      - JEKYLL_ROOTLESS=1

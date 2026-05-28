@@ -1,8 +1,0 @@
-services:
-  ws:
-    build: .
-    image: blog-dev
-    ports:
-      - 4000:4000
-    volumes:
-      - ../..:/srv/jekyll
