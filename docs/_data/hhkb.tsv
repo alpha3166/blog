@@ -60,19 +60,25 @@ no	series	model	layout	keys	color	switch	press	silent	label	wire	wireless	keymap
 59	HHKB Professional HYBRID	PD-KB800WN	英語	60キー	白	静電容量無接点	45g	-	無刻印	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid/	https://www.pfu.ricoh.com/news/2019/new191210.html	eol
 60	HHKB Professional HYBRID	PD-KB820B	日本語	69キー	墨	静電容量無接点	45g	-	左上刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid/	https://www.pfu.ricoh.com/news/2019/new191210.html	eol
 61	HHKB Professional HYBRID	PD-KB820W	日本語	69キー	白	静電容量無接点	45g	-	左上刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid/	https://www.pfu.ricoh.com/news/2019/new191210.html	eol
-62	HHKB Professional HYBRID Type-S	PD-KB800BS	英語	60キー	墨	静電容量無接点	45g	静粛	左上刻印	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
-63	HHKB Professional HYBRID Type-S	PD-KB800WS	英語	60キー	白	静電容量無接点	45g	静粛	左上刻印	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
-64	HHKB Professional HYBRID Type-S	PD-KB800YSC	英語	60キー	雪	静電容量無接点	45g	静粛	中央刻印	USB-C	BT4.2	キーマップ変更	-	2022-10	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2022/new221025.html	-
-65	HHKB Professional HYBRID Type-S	PD-KB800BNS	英語	60キー	墨	静電容量無接点	45g	静粛	無刻印	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
-66	HHKB Professional HYBRID Type-S	PD-KB800WNS	英語	60キー	白	静電容量無接点	45g	静粛	無刻印	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
-67	HHKB Professional HYBRID Type-S	PD-KB800YNS	英語	60キー	雪	静電容量無接点	45g	静粛	無刻印	USB-C	BT4.2	キーマップ変更	-	2022-10	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2022/new221025.html	-
-68	HHKB Professional HYBRID Type-S	PD-KB820BS	日本語	69キー	墨	静電容量無接点	45g	静粛	左上刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
-69	HHKB Professional HYBRID Type-S	PD-KB820WS	日本語	69キー	白	静電容量無接点	45g	静粛	左上刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
-70	HHKB Professional HYBRID Type-S	PD-KB820YSC	日本語	69キー	雪	静電容量無接点	45g	静粛	中央刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2022-10	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2022/new221025.html	-
-71	HHKB Professional HYBRID Type-S	PD-KB820YNS	日本語	69キー	雪	静電容量無接点	45g	静粛	無刻印	USB-C	BT4.2	キーマップ変更	-	2022-10	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2022/new221025.html	-
-72	HHKB Professional HYBRID Type-S	PD-KB800YS	英語	60キー	雪	静電容量無接点	45g	静粛	左上刻印	USB-C	BT4.2	キーマップ変更	-	2021-10	-	https://www.pfu.ricoh.com/news/2021/new211025.html	eol
-73	HHKB Professional HYBRID Type-S	PD-KB820YS	日本語	69キー	雪	静電容量無接点	45g	静粛	左上刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2021-10	-	https://www.pfu.ricoh.com/news/2021/new211025.html	eol
-74	HHKB Studio	PD-ID100B	英語	60キー	墨	メカニカル(MX)	45g	-	中央刻印	USB-C	BT5.0	キーマップ変更	ポインティングスティック、ジェスチャーパッド	2023-10	https://happyhackingkb.com/jp/products/studio/	https://www.pfu.ricoh.com/news/2023/news231025.html	-
-75	HHKB Studio	PD-ID100Y	英語	60キー	雪	メカニカル(MX)	45g	-	中央刻印	USB-C	BT5.0	キーマップ変更	ポインティングスティック、ジェスチャーパッド	2024-10	https://happyhackingkb.com/jp/products/studio/	https://www.pfu.ricoh.com/news/2024/news241002.html	-
-76	HHKB Studio	PD-ID120B	日本語	69キー	墨	メカニカル(MX)	45g	-	中央刻印(かな無)	USB-C	BT5.0	キーマップ変更	ポインティングスティック、ジェスチャーパッド	2023-10	https://happyhackingkb.com/jp/products/studio/	https://www.pfu.ricoh.com/news/2023/news231025.html	-
-77	HHKB Studio	PD-ID120Y	日本語	69キー	雪	メカニカル(MX)	45g	-	中央刻印(かな無)	USB-C	BT5.0	キーマップ変更	ポインティングスティック、ジェスチャーパッド	2024-10	https://happyhackingkb.com/jp/products/studio/	https://www.pfu.ricoh.com/news/2024/news241002.html	-
+62	HHKB Professional HYBRID Type-S	PD-KB800BNS	英語	60キー	墨	静電容量無接点	45g	静粛	無刻印	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
+63	HHKB Professional HYBRID Type-S	PD-KB800BS	英語	60キー	墨	静電容量無接点	45g	静粛	左上刻印	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
+64	HHKB Professional HYBRID Type-S	PD-KB800BSC1	英語	60キー	墨	静電容量無接点	30g	静粛	中央刻印	USB-C	BT4.2	キーマップ変更	-	2026-06	-	https://www.pfu.ricoh.com/news/2026/news260604.html	-
+65	HHKB Professional HYBRID Type-S	PD-KB800WNS	英語	60キー	白	静電容量無接点	45g	静粛	無刻印	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
+66	HHKB Professional HYBRID Type-S	PD-KB800WS	英語	60キー	白	静電容量無接点	45g	静粛	左上刻印	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
+67	HHKB Professional HYBRID Type-S	PD-KB800WSC1	英語	60キー	白	静電容量無接点	30g	静粛	中央刻印	USB-C	BT4.2	キーマップ変更	-	2026-06	-	https://www.pfu.ricoh.com/news/2026/news260604.html	-
+68	HHKB Professional HYBRID Type-S	PD-KB800YNS	英語	60キー	雪	静電容量無接点	45g	静粛	無刻印	USB-C	BT4.2	キーマップ変更	-	2022-10	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2022/new221025.html	-
+69	HHKB Professional HYBRID Type-S	PD-KB800YS	英語	60キー	雪	静電容量無接点	45g	静粛	左上刻印	USB-C	BT4.2	キーマップ変更	-	2021-10	-	https://www.pfu.ricoh.com/news/2021/new211025.html	eol
+70	HHKB Professional HYBRID Type-S	PD-KB800YSC	英語	60キー	雪	静電容量無接点	45g	静粛	中央刻印	USB-C	BT4.2	キーマップ変更	-	2022-10	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2022/new221025.html	-
+71	HHKB Professional HYBRID Type-S	PD-KB800YSC1	英語	60キー	雪	静電容量無接点	30g	静粛	中央刻印	USB-C	BT4.2	キーマップ変更		2026-06	-	https://www.pfu.ricoh.com/news/2026/news260604.html	-
+72	HHKB Professional HYBRID Type-S	PD-KB820BS	日本語	69キー	墨	静電容量無接点	45g	静粛	左上刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
+73	HHKB Professional HYBRID Type-S	PD-KB820BSC1	日本語	69キー	墨	静電容量無接点	30g	静粛	中央刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2026-06	-	https://www.pfu.ricoh.com/news/2026/news260604.html	-
+74	HHKB Professional HYBRID Type-S	PD-KB820WS	日本語	69キー	白	静電容量無接点	45g	静粛	左上刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2019-12	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2019/new191210.html	-
+75	HHKB Professional HYBRID Type-S	PD-KB820WSC1	日本語	69キー	白	静電容量無接点	30g	静粛	中央刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2026-06	-	https://www.pfu.ricoh.com/news/2026/news260604.html	-
+76	HHKB Professional HYBRID Type-S	PD-KB820YNS	日本語	69キー	雪	静電容量無接点	45g	静粛	無刻印	USB-C	BT4.2	キーマップ変更	-	2022-10	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2022/new221025.html	-
+77	HHKB Professional HYBRID Type-S	PD-KB820YS	日本語	69キー	雪	静電容量無接点	45g	静粛	左上刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2021-10	-	https://www.pfu.ricoh.com/news/2021/new211025.html	eol
+78	HHKB Professional HYBRID Type-S	PD-KB820YSC	日本語	69キー	雪	静電容量無接点	45g	静粛	中央刻印(かな無)	USB-C	BT4.2	キーマップ変更	-	2022-10	https://happyhackingkb.com/jp/products/hybrid_types/	https://www.pfu.ricoh.com/news/2022/new221025.html	-
+79	HHKB Professional HYBRID Type-S	PD-KB820YSC1	日本語	69キー	雪	静電容量無接点	30g	静粛	中央刻印(かな無)	USB-C	BT4.2	キーマップ変更		2026-06	-	https://www.pfu.ricoh.com/news/2026/news260604.html	-
+80	HHKB Studio	PD-ID100B	英語	60キー	墨	メカニカル(MX)	45g	-	中央刻印	USB-C	BT5.0	キーマップ変更	ポインティングスティック、ジェスチャーパッド	2023-10	https://happyhackingkb.com/jp/products/studio/	https://www.pfu.ricoh.com/news/2023/news231025.html	-
+81	HHKB Studio	PD-ID100Y	英語	60キー	雪	メカニカル(MX)	45g	-	中央刻印	USB-C	BT5.0	キーマップ変更	ポインティングスティック、ジェスチャーパッド	2024-10	https://happyhackingkb.com/jp/products/studio/	https://www.pfu.ricoh.com/news/2024/news241002.html	-
+82	HHKB Studio	PD-ID120B	日本語	69キー	墨	メカニカル(MX)	45g	-	中央刻印(かな無)	USB-C	BT5.0	キーマップ変更	ポインティングスティック、ジェスチャーパッド	2023-10	https://happyhackingkb.com/jp/products/studio/	https://www.pfu.ricoh.com/news/2023/news231025.html	-
+83	HHKB Studio	PD-ID120Y	日本語	69キー	雪	メカニカル(MX)	45g	-	中央刻印(かな無)	USB-C	BT5.0	キーマップ変更	ポインティングスティック、ジェスチャーパッド	2024-10	https://happyhackingkb.com/jp/products/studio/	https://www.pfu.ricoh.com/news/2024/news241002.html	-
